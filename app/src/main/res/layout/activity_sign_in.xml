@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray3"
+    android:orientation="vertical"
+    tools:context=".Scenarios.ScenarioHome.Controller.SignIn">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="70dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:textColor="@color/colorb"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginEnd="34dp"
+                    android:orientation="vertical">
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/email_address"
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="34dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/strok"
+                        android:fontFamily="@font/tajawal_regular"
+                        android:gravity="start|center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@color/colorb"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/password"
+                        android:layout_marginTop="14dp"
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="34dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/strok"
+                        android:fontFamily="@font/tajawal_regular"
+                        android:gravity="end|center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textColor="@color/colorb"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/linearForgetPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:gravity="end|center_vertical">
+
+
+                        <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajawal_medium"
+                            android:text="@string/did_you_forget_your_password"
+                            android:textColor="@color/colorb"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/btnSignIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="42dp"
+                        android:textColor="@color/colorw"
+                        android:textSize="19sp"
+                        android:text="@string/login"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:background="@drawable/strok"
+                        android:backgroundTint="@color/colorPrimary"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="23dp"
+                        android:layout_marginBottom="23dp"
+                        android:weightSum="1">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight=".47"
+                            android:background="@color/colorGray4" />
+
+
+
+                        <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajawal_medium"
+                            android:text="@string/or"
+                            android:gravity="center"
+                            android:layout_weight=".08"
+                            android:textColor="@color/colorGray4"
+                            android:textSize="18sp" />
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight=".47"
+                            android:background="@color/colorGrayBorder" />
+
+
+                    </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/btnRegister"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="19sp"
+                        android:text="@string/create_new_account"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:background="@drawable/strok_primarydark"
+                        />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTransparentLoading"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/colorPrimaryDark" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

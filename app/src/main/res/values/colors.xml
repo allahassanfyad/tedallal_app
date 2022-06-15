@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fcce1c</color>
+    <color name="colorPrimaryDark">#219479</color>
+    <color name="colorAccent">#fcce1c</color>
+    <color name="colorb">#000000</color>
+    <color name="colorw">#FFFFFF</color>
+    <color name="colorGray">#F3F3F3</color>
+    <color name="colorTransparentLoading">#48000000</color>
+    <color name="colorGrayBorder">#707070</color>
+    <color name="colorGray2">#B8B8B8</color>
+    <color name="colorGray3">#f9f9f9</color>
+    <color name="colorGray7">#d8d8d8</color>
+    <color name="colorEditBorder">#E8E6E6</color>
+    <color name="colorHintBorder">#b8b8b8</color>
+    <color name="colorHintBorder1">#e0e0e0</color>
+    <color name="colorDarkGray">#7b7b7b</color>
+    <color name="colorGray4">#515151</color>
+    <color name="colorGray5">#f5f5f5</color>
+    <color name="colorGray6">#4c4c4c</color>
+    <color name="colorRed">#f52403</color>
+    <color name="colorPurble">#a06590</color>
+    <color name="colorChatLeft">#ebdfc3</color>
+    <color name="colorChatRight">#f0d79c</color>
+</resources>

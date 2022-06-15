@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_nav"
+        android:title="@string/main"
+        android:icon="@drawable/home_svg"
+        android:checked="true"/>
+
+    <item
+        android:id="@+id/profile"
+        android:title="@string/my_account"
+        android:icon="@drawable/user_svg"/>
+
+
+    <item
+        android:id="@+id/favourite"
+        android:title="@string/favourit"
+        android:icon="@drawable/favourite_svg"
+        />
+
+    <item
+        android:id="@+id/search"
+        android:title="@string/search"
+        android:icon="@drawable/search_svg"/>
+
+    <item
+        android:id="@+id/help"
+        android:title="@string/help"
+        android:icon="@drawable/help_svg"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</menu>

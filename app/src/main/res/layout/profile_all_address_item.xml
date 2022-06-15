@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+
+
+
+
+            <com.application.tedallal_app.Utils.TextViewWithFont
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/tajawal_regular"
+                android:text="خالد احمد"
+                android:textColor="@color/colorGray6"
+                android:textSize="14sp" />
+
+
+            <com.application.tedallal_app.Utils.TextViewWithFont
+                android:id="@+id/txtNaigbourStreet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_regular"
+                android:layout_marginTop="2dp"
+                android:maxLines="44"
+                android:text="سعود الفيصل، الروضة، جدة 23432"
+                android:textColor="@color/colorGray6"
+                android:textSize="14sp" />
+
+
+
+            <com.application.tedallal_app.Utils.TextViewWithFont
+                android:id="@+id/txtCityCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_regular"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="حي الروضة شارع التحلية"
+                android:textColor="@color/colorGray6"
+                android:textSize="12sp" />
+
+            <com.application.tedallal_app.Utils.TextViewWithFont
+                android:id="@+id/txtPostalCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_regular"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="حي الروضة شارع التحلية"
+                android:textColor="@color/colorGray6"
+                android:textSize="12sp" />
+
+            <com.application.tedallal_app.Utils.TextViewWithFont
+                android:id="@+id/txtCodePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajawal_regular"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="حي الروضة شارع التحلية"
+                android:textColor="@color/colorGray6"
+                android:textSize="12sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+
+
+                <Button
+                    android:id="@+id/btnEdit"
+                    android:layout_width="77dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/strok_primarydark1"
+                    android:fontFamily="@font/tajawal_medium"
+                    android:text="@string/edit"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="79dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/strok_primarydark1"
+                    android:fontFamily="@font/tajawal_medium"
+                    android:text="@string/delete"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight=".2"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="vertical">-->
+
+
+
+<!--            <Button-->
+<!--                android:id="@+id/btnChoose"-->
+<!--                android:layout_width="77dp"-->
+<!--                android:layout_height="25dp"-->
+<!--                android:textColor="@color/colorPrimary"-->
+<!--                android:textSize="12sp"-->
+<!--                android:text="إختر"-->
+<!--                android:fontFamily="@font/tajawal_medium"-->
+<!--                android:background="@drawable/strok_primarydark"-->
+<!--                />-->
+
+
+<!--        </LinearLayout>-->
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorEditBorder" />
+
+
+</LinearLayout>

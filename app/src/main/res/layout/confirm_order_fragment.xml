@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray3"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="147dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="28dp"
+                    android:background="@drawable/strok4"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@color/colorEditBorder"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <com.application.tedallal_app.Utils.TextViewWithFontbold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajawal_bold"
+                            android:text="@string/confirm_order"
+                            android:textColor="@color/colorGray6"
+                            android:textSize="18sp" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorEditBorder" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".8"
+                                        android:orientation="vertical">
+
+
+                                        <com.application.tedallal_app.Utils.TextViewWithFontbold
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="6dp"
+                                            android:fontFamily="@font/tajawal_bold"
+                                            android:text="@string/delivery_address"
+                                            android:textColor="@color/colorGray6"
+                                            android:textSize="14sp" />
+
+
+                                        <com.application.tedallal_app.Utils.TextViewWithFont
+                                            android:id="@+id/txtName"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="7dp"
+                                            android:fontFamily="@font/tajawal_regular"
+                                            android:text="خالد احمد"
+                                            android:textColor="@color/colorGray6"
+                                            android:textSize="12sp" />
+
+
+                                        <com.application.tedallal_app.Utils.TextViewWithFont
+                                            android:id="@+id/txtNaigbourStreet"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/tajawal_regular"
+                                            android:maxLines="1"
+                                            android:singleLine="true"
+                                            android:text="حي الروضة شارع التحلية"
+                                            android:textColor="@color/colorGray6"
+                                            android:textSize="12sp" />
+
+                                        <com.application.tedallal_app.Utils.TextViewWithFont
+                                            android:id="@+id/txtCityCountry"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/tajawal_regular"
+                                            android:maxLines="1"
+                                            android:singleLine="true"
+                                            android:text="حي الروضة شارع التحلية"
+                                            android:textColor="@color/colorGray6"
+                                            android:textSize="12sp" />
+
+                                        <com.application.tedallal_app.Utils.TextViewWithFont
+                                            android:id="@+id/txtCodePhone"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/tajawal_regular"
+                                            android:maxLines="1"
+                                            android:singleLine="true"
+                                            android:text="حي الروضة شارع التحلية"
+                                            android:textColor="@color/colorGray6"
+                                            android:textSize="12sp" />
+
+                                        <!--                                        <com.application.tedallal_app.Utils.TextViewWithFont-->
+                                        <!--                                            android:layout_width="wrap_content"-->
+                                        <!--                                            android:layout_height="wrap_content"-->
+                                        <!--                                            android:fontFamily="@font/tajawal_regular"-->
+                                        <!--                                            android:maxLines="1"-->
+                                        <!--                                            android:singleLine="true"-->
+                                        <!--                                            android:text="جدة،المملكة العربية السعودية"-->
+                                        <!--                                            android:textColor="@color/colorGray6"-->
+                                        <!--                                            android:textSize="11sp" />-->
+
+                                        <!--                                        <com.application.tedallal_app.Utils.TextViewWithFont-->
+                                        <!--                                            android:layout_width="wrap_content"-->
+                                        <!--                                            android:layout_height="wrap_content"-->
+                                        <!--                                            android:fontFamily="@font/tajawal_regular"-->
+                                        <!--                                            android:text="966650000000111100"-->
+                                        <!--                                            android:textColor="@color/colorGray6"-->
+                                        <!--                                            android:textSize="11sp" />-->
+
+
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/linearEditAddress"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".2"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+
+                                        <com.application.tedallal_app.Utils.TextViewWithFont
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/tajawal_regular"
+                                            android:maxLines="1"
+                                            android:singleLine="true"
+                                            android:text="@string/edit"
+                                            android:textColor="@color/colorPrimary"
+                                            android:textSize="14sp" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="@color/colorEditBorder" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <!--                        <LinearLayout-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="0dp"-->
+                        <!--                            android:layout_marginStart="15dp"-->
+                        <!--                            android:layout_marginEnd="15dp"-->
+                        <!--                            android:layout_weight=".45"-->
+                        <!--                            android:orientation="horizontal"-->
+                        <!--                            android:weightSum="1">-->
+
+
+                        <!--                            <LinearLayout-->
+                        <!--                                android:layout_width="0dp"-->
+                        <!--                                android:layout_height="match_parent"-->
+                        <!--                                android:layout_weight=".8"-->
+                        <!--                                android:orientation="vertical">-->
+
+
+                        <!--                                <com.application.tedallal_app.Utils.TextViewWithFontbold-->
+                        <!--                                    android:layout_width="wrap_content"-->
+                        <!--                                    android:layout_height="wrap_content"-->
+                        <!--                                    android:layout_marginTop="6dp"-->
+                        <!--                                    android:fontFamily="@font/tajawal_bold"-->
+                        <!--                                    android:text="@string/payment_method"-->
+                        <!--                                    android:textColor="@color/colorGray6"-->
+                        <!--                                    android:textSize="13sp" />-->
+
+
+                        <!--                                <LinearLayout-->
+                        <!--                                    android:layout_width="match_parent"-->
+                        <!--                                    android:layout_height="wrap_content"-->
+                        <!--                                    android:layout_marginTop="10dp"-->
+                        <!--                                    android:orientation="horizontal">-->
+
+                        <!--                                    <ImageView-->
+                        <!--                                        android:layout_width="wrap_content"-->
+                        <!--                                        android:layout_height="wrap_content"-->
+                        <!--                                        android:src="@drawable/credit_card_svg" />-->
+
+                        <!--                                    <com.application.tedallal_app.Utils.TextViewWithFont-->
+                        <!--                                        android:layout_width="wrap_content"-->
+                        <!--                                        android:layout_height="wrap_content"-->
+                        <!--                                        android:layout_gravity="center_vertical"-->
+                        <!--                                        android:layout_marginStart="4dp"-->
+                        <!--                                        android:fontFamily="@font/tajawal_regular"-->
+                        <!--                                        android:maxLines="1"-->
+                        <!--                                        android:singleLine="true"-->
+                        <!--                                        android:text="480007********467"-->
+                        <!--                                        android:textColor="@color/colorGray6"-->
+                        <!--                                        android:textSize="11sp" />-->
+
+
+                        <!--                                    <com.application.tedallal_app.Utils.TextViewWithFont-->
+                        <!--                                        android:layout_width="wrap_content"-->
+                        <!--                                        android:layout_height="wrap_content"-->
+                        <!--                                        android:layout_gravity="center_vertical"-->
+                        <!--                                        android:layout_marginStart="7dp"-->
+                        <!--                                        android:fontFamily="@font/tajawal_regular"-->
+                        <!--                                        android:maxLines="1"-->
+                        <!--                                        android:singleLine="true"-->
+                        <!--                                        android:text="1/2020"-->
+                        <!--                                        android:textColor="@color/colorGray6"-->
+                        <!--                                        android:textSize="11sp" />-->
+
+
+                        <!--                                    <com.application.tedallal_app.Utils.TextViewWithFont-->
+                        <!--                                        android:layout_width="wrap_content"-->
+                        <!--                                        android:layout_height="wrap_content"-->
+                        <!--                                        android:layout_gravity="center_vertical"-->
+                        <!--                                        android:layout_marginStart="4dp"-->
+                        <!--                                        android:fontFamily="@font/tajawal_regular"-->
+                        <!--                                        android:maxLines="1"-->
+                        <!--                                        android:singleLine="true"-->
+                        <!--                                        android:text="EXP"-->
+                        <!--                                        android:textColor="@color/colorGray6"-->
+                        <!--                                        android:textSize="11sp" />-->
+
+
+                        <!--                                </LinearLayout>-->
+
+
+                        <!--                            </LinearLayout>-->
+
+
+                        <!--                            <LinearLayout-->
+                        <!--                                android:layout_width="0dp"-->
+                        <!--                                android:layout_height="match_parent"-->
+                        <!--                                android:layout_weight=".2"-->
+                        <!--                                android:gravity="center"-->
+                        <!--                                android:orientation="vertical">-->
+
+
+                        <!--                                <com.application.tedallal_app.Utils.TextViewWithFont-->
+                        <!--                                    android:layout_width="wrap_content"-->
+                        <!--                                    android:layout_height="wrap_content"-->
+                        <!--                                    android:fontFamily="@font/tajawal_regular"-->
+                        <!--                                    android:maxLines="1"-->
+                        <!--                                    android:singleLine="true"-->
+                        <!--                                    android:text="@string/edit"-->
+                        <!--                                    android:textColor="@color/colorPrimary"-->
+                        <!--                                    android:textSize="14sp" />-->
+
+                        <!--                            </LinearLayout>-->
+                        <!--                        </LinearLayout>-->
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcyConfirmOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginEnd="17dp"
+                    android:orientation="vertical">
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/promo_code"
+                        android:textColor="@color/colorb"
+                        android:textSize="15sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <EditText
+                            android:id="@+id/editPromoCode"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".7"
+                            android:background="@drawable/strok"
+                            android:fontFamily="@font/tajawal_regular"
+                            android:gravity="start|center_vertical"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorHintBorder"
+                            android:textSize="16sp" />
+
+
+                        <Button
+                            android:id="@+id/btnUsePromoCode"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight=".3"
+                            android:background="@drawable/strok_primarydark1"
+                            android:fontFamily="@font/tajawal_medium"
+                            android:text="@string/use"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:background="@color/colorw"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="53dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".65"
+                                android:gravity="center_vertical">
+
+
+                                <com.application.tedallal_app.Utils.TextViewWithFont
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="@font/tajawal_regular"
+                                    android:text="@string/total"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="18sp" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".35"
+                                android:gravity="center">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <com.application.tedallal_app.Utils.TextViewWithFontbold
+                                        android:id="@+id/txtTotal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="3dp"
+                                        android:fontFamily="@font/tajawal_bold"
+                                        android:text="10.00"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="16sp" />
+
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <com.application.tedallal_app.Utils.TextViewWithFontbold
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="3dp"
+                                        android:fontFamily="@font/tajawal_bold"
+                                        android:text="@string/ryal"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="16sp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:background="@color/colorEditBorder" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="53dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".65"
+                                android:gravity="center_vertical">
+
+
+                                <com.application.tedallal_app.Utils.TextViewWithFont
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="@font/tajawal_regular"
+                                    android:text="@string/delivery"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="18sp" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".35"
+                                android:gravity="center">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <com.application.tedallal_app.Utils.TextViewWithFontbold
+                                        android:id="@+id/txtDeliveryPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="3dp"
+                                        android:fontFamily="@font/tajawal_bold"
+                                        android:text="10.00"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="16sp" />
+
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <com.application.tedallal_app.Utils.TextViewWithFontbold
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="3dp"
+                                        android:fontFamily="@font/tajawal_bold"
+                                        android:text="@string/ryal"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="16sp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="53dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".65"
+                                android:gravity="center_vertical">
+
+
+                                <com.application.tedallal_app.Utils.TextViewWithFont
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="@font/tajawal_regular"
+                                    android:text="@string/taxes"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="18sp" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".35"
+                                android:gravity="center">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <com.application.tedallal_app.Utils.TextViewWithFontbold
+                                        android:id="@+id/txtTaxesPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="3dp"
+                                        android:fontFamily="@font/tajawal_bold"
+                                        android:text="10.00"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="16sp" />
+
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <com.application.tedallal_app.Utils.TextViewWithFontbold
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="3dp"
+                                        android:fontFamily="@font/tajawal_bold"
+                                        android:text="@string/ryal"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="16sp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:background="@color/colorEditBorder" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="53dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".65"
+                                android:gravity="center_vertical">
+
+
+                                <com.application.tedallal_app.Utils.TextViewWithFont
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="@font/tajawal_regular"
+                                    android:text="@string/final_total"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="18sp" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".35"
+                                android:gravity="center">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <com.application.tedallal_app.Utils.TextViewWithFontbold
+                                        android:id="@+id/txtFinalTotal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="3dp"
+                                        android:fontFamily="@font/tajawal_bold"
+                                        android:text="20.00"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="16sp" />
+
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <com.application.tedallal_app.Utils.TextViewWithFontbold
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="3dp"
+                                        android:fontFamily="@font/tajawal_bold"
+                                        android:text="@string/ryal"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="16sp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnBuy"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="23dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="23dp"
+                        android:background="@drawable/strok"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/paying_off"
+                        android:textColor="@color/colorw"
+                        android:textSize="19sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</LinearLayout>

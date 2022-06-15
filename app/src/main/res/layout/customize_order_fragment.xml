@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray3"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:id="@+id/txtProductTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/add_address"
+                        android:textColor="@color/colorGray6"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="275dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginBottom="6dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight=".6"
+                        android:background="@drawable/strok6"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+
+                                <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                                    android:id="@+id/txtSize1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/tajawal_medium"
+                                    android:gravity="center_vertical"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="@string/height"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="14sp" />
+
+
+                                <RelativeLayout
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:background="@drawable/strok">
+
+<!--                                    <Spinner-->
+<!--                                        android:id="@+id/spinnerHeight"-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_centerVertical="true"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:layout_marginStart="8dp"-->
+<!--                                        android:layout_marginEnd="10dp"-->
+<!--                                        android:background="@android:color/transparent"-->
+<!--                                        android:gravity="center"-->
+<!--                                        android:spinnerMode="dropdown" />-->
+
+<!--                                    <ImageView-->
+<!--                                        android:layout_width="13dp"-->
+<!--                                        android:layout_height="13dp"-->
+<!--                                        android:layout_alignParentEnd="true"-->
+<!--                                        android:layout_centerVertical="true"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:layout_marginEnd="2dp"-->
+<!--                                        android:src="@drawable/arrow_down_svg" />-->
+
+
+                                    <EditText
+                                        android:id="@+id/editHeight"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/strok"
+                                        android:fontFamily="@font/tajawal_medium"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:maxLines="1"
+                                        android:paddingStart="15dp"
+                                        android:paddingEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="14sp" />
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorEditBorder" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+
+                                <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                                    android:id="@+id/txtSize2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/tajawal_medium"
+                                    android:gravity="center_vertical"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="@string/overall_width"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="14sp" />
+
+
+                                <RelativeLayout
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:background="@drawable/strok">
+
+<!--                                    <Spinner-->
+<!--                                        android:id="@+id/spinnerOverallWidth"-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_centerVertical="true"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:layout_marginStart="8dp"-->
+<!--                                        android:layout_marginEnd="10dp"-->
+<!--                                        android:background="@android:color/transparent"-->
+<!--                                        android:gravity="center"-->
+<!--                                        android:spinnerMode="dropdown" />-->
+
+<!--                                    <ImageView-->
+<!--                                        android:layout_width="13dp"-->
+<!--                                        android:layout_height="13dp"-->
+<!--                                        android:layout_alignParentEnd="true"-->
+<!--                                        android:layout_centerVertical="true"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:layout_marginEnd="2dp"-->
+<!--                                        android:src="@drawable/arrow_down_svg" />-->
+
+                                    <EditText
+                                        android:id="@+id/editOverallWidth"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/strok"
+                                        android:fontFamily="@font/tajawal_medium"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:maxLines="1"
+                                        android:paddingStart="15dp"
+                                        android:paddingEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="14sp" />
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorEditBorder" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+
+                                <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                                    android:id="@+id/txtSize3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/tajawal_medium"
+                                    android:gravity="center_vertical"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="@string/the_waist"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="14sp" />
+
+
+                                <RelativeLayout
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:background="@drawable/strok">
+
+<!--                                    <Spinner-->
+<!--                                        android:id="@+id/spinnerTheWaist"-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_centerVertical="true"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:layout_marginStart="8dp"-->
+<!--                                        android:layout_marginEnd="10dp"-->
+<!--                                        android:background="@android:color/transparent"-->
+<!--                                        android:gravity="center"-->
+<!--                                        android:spinnerMode="dropdown" />-->
+
+<!--                                    <ImageView-->
+<!--                                        android:layout_width="13dp"-->
+<!--                                        android:layout_height="13dp"-->
+<!--                                        android:layout_alignParentEnd="true"-->
+<!--                                        android:layout_centerVertical="true"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:layout_marginEnd="2dp"-->
+<!--                                        android:src="@drawable/arrow_down_svg" />-->
+
+                                    <EditText
+                                        android:id="@+id/editTheWaist"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/strok"
+                                        android:fontFamily="@font/tajawal_medium"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:maxLines="1"
+                                        android:paddingStart="15dp"
+                                        android:paddingEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="14sp" />
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorEditBorder" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+
+                                <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                                    android:id="@+id/txtSize4"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/tajawal_medium"
+                                    android:gravity="center_vertical"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="@string/sleeve"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="14sp" />
+
+
+                                <RelativeLayout
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:background="@drawable/strok">
+
+<!--                                    <Spinner-->
+<!--                                        android:id="@+id/spinnerSleeve"-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_centerVertical="true"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:layout_marginStart="8dp"-->
+<!--                                        android:layout_marginEnd="10dp"-->
+<!--                                        android:background="@android:color/transparent"-->
+<!--                                        android:gravity="center"-->
+<!--                                        android:spinnerMode="dropdown" />-->
+
+<!--                                    <ImageView-->
+<!--                                        android:layout_width="13dp"-->
+<!--                                        android:layout_height="13dp"-->
+<!--                                        android:layout_alignParentEnd="true"-->
+<!--                                        android:layout_centerVertical="true"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:layout_marginEnd="2dp"-->
+<!--                                        android:src="@drawable/arrow_down_svg" />-->
+
+                                    <EditText
+                                        android:id="@+id/editSleeve"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/strok"
+                                        android:fontFamily="@font/tajawal_medium"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:maxLines="1"
+                                        android:paddingStart="15dp"
+                                        android:paddingEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="14sp" />
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorEditBorder" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+
+                                <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                                    android:id="@+id/txtSize5"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/tajawal_medium"
+                                    android:gravity="center_vertical"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="@string/klush"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="14sp" />
+
+
+                                <RelativeLayout
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:background="@drawable/strok">
+
+<!--                                    <Spinner-->
+<!--                                        android:id="@+id/spinnerKlush"-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_centerVertical="true"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:layout_marginStart="8dp"-->
+<!--                                        android:layout_marginEnd="10dp"-->
+<!--                                        android:background="@android:color/transparent"-->
+<!--                                        android:gravity="center"-->
+<!--                                        android:spinnerMode="dropdown" />-->
+
+<!--                                    <ImageView-->
+<!--                                        android:layout_width="13dp"-->
+<!--                                        android:layout_height="13dp"-->
+<!--                                        android:layout_alignParentEnd="true"-->
+<!--                                        android:layout_centerVertical="true"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:layout_marginEnd="2dp"-->
+<!--                                        android:src="@drawable/arrow_down_svg" />-->
+
+                                    <EditText
+                                        android:id="@+id/editKlush"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/strok"
+                                        android:fontFamily="@font/tajawal_medium"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:maxLines="1"
+                                        android:paddingStart="15dp"
+                                        android:paddingEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/colorb"
+                                        android:textSize="14sp" />
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:background="@drawable/strok6">
+
+                        <ImageView
+                            android:id="@+id/imgCustomSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/logo_tedallal" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:id="@+id/txtOpenVideo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="13dp"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/how_to_take_measurements"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/txtOpenVideo"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="35dp"-->
+                <!--                    android:layout_marginBottom="10dp"-->
+                <!--                    android:fontFamily="@font/tajawal_medium"-->
+                <!--                    android:layout_marginStart="13dp"-->
+                <!--                    style="@style/Widget.AppCompat.Button.Borderless"-->
+                <!--                    android:text="@string/how_to_take_measurements"-->
+                <!--                    android:textColor="@color/colorAccent"-->
+                <!--                    android:textSize="12sp" />-->
+
+                <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:fontFamily="@font/tajawal_medium"
+                    android:text="@string/additional_requests"
+                    android:textColor="@color/colorb"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/editDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="122dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/strok"
+                    android:fontFamily="@font/tajawal_medium"
+                    android:gravity="top"
+                    android:hint="@string/details"
+                    android:imeOptions="actionDone"
+                    android:includeFontPadding="false"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:isScrollContainer="true"
+                    android:maxLength="20000"
+                    android:maxLines="10"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:textColor="@color/colorb"
+                    android:textSize="@dimen/_13sdp" />
+
+                <Button
+                    android:id="@+id/btnAddToCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="33dp"
+                    android:background="@drawable/strok"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:fontFamily="@font/tajawal_medium"
+                    android:text="@string/add_to_cart"
+                    android:textColor="@color/colorw"
+                    android:textSize="16sp" />
+
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="21.5dp"
+                    android:layout_marginEnd="33dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/strok_primarydark"
+                    android:fontFamily="@font/tajawal_medium"
+                    android:text="@string/back"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="19sp" />
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+
+</LinearLayout>

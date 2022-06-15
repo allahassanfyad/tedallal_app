@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "731999889877",
+    "project_id": "tedallal-app",
+    "storage_bucket": "tedallal-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731999889877:android:e292c2ba465c1ba93ef55c",
+        "android_client_info": {
+          "package_name": "com.application.tedallal_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731999889877-vd67u48beh0h3p7ohmlhsk50qsk07gnu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqkG_NHZ0971bDSMuTNqnfngGnOPBnUOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731999889877-vd67u48beh0h3p7ohmlhsk50qsk07gnu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

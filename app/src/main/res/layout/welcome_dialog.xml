@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_290sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorw"
+    android:gravity="center_horizontal"
+    android:minWidth="@dimen/_300sdp"
+    android:minHeight="@dimen/_200sdp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/done1"
+            android:tint="@color/colorAccent"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:textSize="@dimen/_17sdp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/Register_successfully"
+            android:gravity="center"
+            android:fontFamily="@font/tajawal_bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/colorGrayBorder"
+            android:text="@string/welcome_tex"
+            android:includeFontPadding="false"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:gravity="center"
+            android:fontFamily="@font/tajawal_regular"/>
+
+    </LinearLayout>
+</LinearLayout>

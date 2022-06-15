@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_weight="1"
+        android:layoutDirection="rtl"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".8"
+            android:layoutDirection="rtl"
+            android:orientation="vertical">
+
+
+            <com.application.tedallal_app.Utils.TextViewWithFontbold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/tajawal_bold"
+                android:text="طريقة الدفع:"
+                android:textColor="@color/colorGray6"
+                android:textSize="13sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layoutDirection="rtl"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/credit_card_svg" />
+
+                <com.application.tedallal_app.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/tajawal_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="480007********467"
+                    android:textColor="@color/colorGray6"
+                    android:textSize="11sp" />
+
+
+                <com.application.tedallal_app.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="7dp"
+                    android:fontFamily="@font/tajawal_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="1/2020"
+                    android:textColor="@color/colorGray6"
+                    android:textSize="11sp" />
+
+
+                <com.application.tedallal_app.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/tajawal_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="EXP"
+                    android:textColor="@color/colorGray6"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:layoutDirection="rtl"
+            android:orientation="vertical">
+
+
+
+            <Button
+                android:layout_width="77dp"
+                android:layout_height="25dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:text="إختر"
+                android:fontFamily="@font/tajawal_medium"
+                android:background="@drawable/strok_primarydark"
+                />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorEditBorder" />
+
+
+</LinearLayout>

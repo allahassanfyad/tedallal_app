@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray3"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="21dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/profile_info"
+                        android:textColor="@color/colorGray6"
+                        android:textSize="18sp" />
+
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontbold
+                        android:id="@+id/txtProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:fontFamily="@font/tajawal_bold"
+                        android:textColor="@color/colorGray6"
+                        android:textSize="18sp" />
+
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:id="@+id/txtProfileCountry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layoutDirection="ltr"
+                        android:orientation="vertical">
+
+                        <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+                            android:id="@+id/buttonGroupSegmented"
+                            android:layout_width="match_parent"
+                            android:layout_height="47dp"
+                            android:background="@color/colorw"
+                            android:elevation="@dimen/_2sdp"
+                            app:draggable="true"
+                            app:position="2"
+                            app:radius="0dp"
+                            app:ripple="false"
+                            app:rippleColor="@color/colorb"
+                            app:selectedBackground="@drawable/selector_line"
+                            app:selectionAnimationDuration="500">
+
+
+                            <com.addisonelliott.segmentedbutton.SegmentedButton
+                                android:id="@+id/segmented2"
+                                android:layout_width="0dp"
+                                android:layout_height="47dp"
+                                android:layout_weight="1.3"
+                                android:fontFamily="@font/tajawal_medium"
+                                android:includeFontPadding="false"
+                                android:padding="5dp"
+                                app:selectedTextColor="@color/colorPrimary"
+                                app:text="@string/delivery_address"
+                                app:textColor="@color/colorDarkGray"
+                                app:textSize="12sp" />
+
+                            <com.addisonelliott.segmentedbutton.SegmentedButton
+                                android:id="@+id/segmented3"
+                                android:layout_width="0dp"
+                                android:layout_height="47dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/tajawal_medium"
+                                android:includeFontPadding="false"
+                                android:padding="5dp"
+                                app:selectedTextColor="@color/colorPrimary"
+                                app:text="@string/orders"
+                                app:textColor="@color/colorDarkGray"
+                                app:textSize="12sp" />
+
+
+                            <com.addisonelliott.segmentedbutton.SegmentedButton
+                                android:id="@+id/segmented4"
+                                android:layout_width="0dp"
+                                android:layout_height="47dp"
+                                android:layout_weight="1.5"
+                                android:fontFamily="@font/tajawal_medium"
+                                android:includeFontPadding="false"
+                                android:padding="5dp"
+                                app:selectedTextColor="@color/colorPrimary"
+                                app:text="@string/account_info"
+                                app:textColor="@color/colorDarkGray"
+                                app:textSize="12sp" />
+
+
+                        </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <FrameLayout
+                            android:id="@+id/fragment_container2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</LinearLayout>

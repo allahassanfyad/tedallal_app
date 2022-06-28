@@ -69,20 +69,20 @@ public class Rcy_Profile_Order_Adapter extends RecyclerView.Adapter<RecyclerView
 //
 //        }
 
-        String datetime = songs.getDatee();
-        String[] splitingdate = datetime.split(" ");
-        String date = splitingdate[0];
-        String time = splitingdate[1];
-        Log.e("dateTime", date + "......." + time);
+//        String datetime = songs.getDatee();
+//        String[] splitingdate = datetime.split(" ");
+//        String date = splitingdate[0];
+//        String time = splitingdate[1];
+//        Log.e("dateTime", date + "......." + time);
+//
 
+        itemHome.txtdate.setText(songs.getDateeeeee());
 
-        itemHome.txtdate.setText(date);
-
-        itemHome.txttime.setText(time);
+        itemHome.txttime.setText(songs.getTimee());
 
         itemHome.txtstaus.setText(songs.getStatus());
         itemHome.txtprice.setText(songs.getTotlePrice());
-        itemHome.txtordernumber.setText(""+songs.getId());
+        itemHome.txtordernumber.setText("" + songs.getId());
 //        itemHome.txtdate.setText(songs.getDatee());
 
 

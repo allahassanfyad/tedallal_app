@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#fcce1c</color>
-    <color name="colorPrimaryDark">#219479</color>
+    <color name="colorPrimaryDark">#0b9471</color>
     <color name="colorAccent">#fcce1c</color>
     <color name="colorb">#000000</color>
     <color name="colorw">#FFFFFF</color>
@@ -22,4 +22,6 @@
     <color name="colorPurble">#a06590</color>
     <color name="colorChatLeft">#ebdfc3</color>
     <color name="colorChatRight">#f0d79c</color>
+    <color name="colorSplash">#fff50e</color>
+
 </resources>

@@ -87,11 +87,12 @@ public class Rcy_Recently_Added_Adapter extends RecyclerView.Adapter<RecyclerVie
         }
 
         itemHome.txtprice.setText(songs.getPrice());
+        itemHome.txtpriceDiscount.setText(songs.getPriceDiscount());
 
 
         Glide.with(context)
                 .load(songs.getImg1())
-                .placeholder(R.drawable.logo_tedallal)
+                .placeholder(R.drawable.holder_png)
                 .into(itemHome.imgphoto);
 
         if (songs.getFavouret() == true) {
@@ -351,7 +352,7 @@ public class Rcy_Recently_Added_Adapter extends RecyclerView.Adapter<RecyclerVie
     public static class notificationHolder extends RecyclerView.ViewHolder {
 
         ImageView imgphoto, imgFav;
-        TextView txttitle, txtprice;
+        TextView txttitle, txtprice,txtpriceDiscount;
 //        LinearLayout linearupcoming;
 //        ShimmerFrameLayout container;
 
@@ -362,6 +363,7 @@ public class Rcy_Recently_Added_Adapter extends RecyclerView.Adapter<RecyclerVie
             imgphoto = itemView.findViewById(R.id.imgPhoto);
             imgFav = itemView.findViewById(R.id.imgFav);
             txtprice = itemView.findViewById(R.id.txtPrice);
+            txtpriceDiscount = itemView.findViewById(R.id.txtPriceDiscount);
             txttitle = itemView.findViewById(R.id.txtTitle);
 //            linearupcoming = itemView.findViewById(R.id.linearUpComing);
 

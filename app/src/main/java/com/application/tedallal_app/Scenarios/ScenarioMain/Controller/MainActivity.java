@@ -365,8 +365,8 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
 
-                    Profile_Fragment profile_fragment = new Profile_Fragment();
-                    loadFragment(profile_fragment);
+                    Favourite_Fragment favourite_fragment = new Favourite_Fragment();
+                    loadFragment(favourite_fragment);
                 }
 
 

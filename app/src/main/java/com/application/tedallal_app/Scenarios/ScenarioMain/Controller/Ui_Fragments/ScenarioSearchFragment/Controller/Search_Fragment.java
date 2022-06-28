@@ -85,8 +85,16 @@ public class Search_Fragment extends Fragment implements IFOnBackPressed, Networ
                         tinyDB.putString("search_word", editsearch.getText().toString());
                         MainActivity.loading.setVisibility(View.VISIBLE);
                         String user_id = saved_data.get_user_id(Objects.requireNonNull(getContext()));
-                        new Apicalls(getContext(),Search_Fragment.this).get_Search(user_id,editsearch.getText().toString());
 
+                        if (saved_data.get_lang_num(Objects.requireNonNull(getContext())).equals("ar")) {
+                            new Apicalls(getContext(),Search_Fragment.this).get_Search(user_id,editsearch.getText().toString(),"ar");
+
+
+                        } else if (saved_data.get_lang_num(getContext()).equals("en")) {
+
+                            new Apicalls(getContext(),Search_Fragment.this).get_Search(user_id,editsearch.getText().toString(),"en");
+
+                        }
                     }
                 }
 

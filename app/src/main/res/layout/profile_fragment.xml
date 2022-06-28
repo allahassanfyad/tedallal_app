@@ -98,7 +98,7 @@
                                 android:fontFamily="@font/tajawal_medium"
                                 android:includeFontPadding="false"
                                 android:padding="5dp"
-                                app:selectedTextColor="@color/colorPrimary"
+                                app:selectedTextColor="@color/colorPrimaryDark"
                                 app:text="@string/delivery_address"
                                 app:textColor="@color/colorDarkGray"
                                 app:textSize="12sp" />
@@ -111,7 +111,7 @@
                                 android:fontFamily="@font/tajawal_medium"
                                 android:includeFontPadding="false"
                                 android:padding="5dp"
-                                app:selectedTextColor="@color/colorPrimary"
+                                app:selectedTextColor="@color/colorPrimaryDark"
                                 app:text="@string/orders"
                                 app:textColor="@color/colorDarkGray"
                                 app:textSize="12sp" />
@@ -125,7 +125,7 @@
                                 android:fontFamily="@font/tajawal_medium"
                                 android:includeFontPadding="false"
                                 android:padding="5dp"
-                                app:selectedTextColor="@color/colorPrimary"
+                                app:selectedTextColor="@color/colorPrimaryDark"
                                 app:text="@string/account_info"
                                 app:textColor="@color/colorDarkGray"
                                 app:textSize="12sp" />

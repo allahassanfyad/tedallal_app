@@ -87,11 +87,11 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
             @Override
             public void onClick(View v) {
 
-                if (ordersDetailsList.size() == 0){
+                if (ordersDetailsList.size() == 0) {
 
-                    Log.e("noProduct","No Product To Reorder");
+                    Log.e("noProduct", "No Product To Reorder");
 
-                }else {
+                } else {
                     MainActivity.loading.setVisibility(View.VISIBLE);
                     send_order1(copun);
                 }
@@ -99,7 +99,6 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
 
             }
         });
-
 
 
         return view;
@@ -136,14 +135,14 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
             txtordernumber.setText("" + allOrdersResponses[0].getId());
             copun = allOrdersResponses[0].getCoponCode();
 
-            String datetime = allOrdersResponses[0].getDatee();
-            String[] splitingdate = datetime.split(" ");
-            String date = splitingdate[0];
-            String time = splitingdate[1];
-            Log.e("dateTime", date + "......." + time);
+//            String datetime = allOrdersResponses[0].getDatee();
+//            String[] splitingdate = datetime.split(" ");
+//            String date = splitingdate[0];
+//            String time = splitingdate[1];
+//            Log.e("dateTime", date + "......." + time);
 
 
-            txtdate.setText(date);
+            txtdate.setText(allOrdersResponses[0].getDateeeeee());
 
             txtaddress.setText(allOrdersResponses[0].getAddress());
 
@@ -166,17 +165,17 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
 //        categoryResponse.setTimee(allOrdersResponses[0].getTimee());
 //        categoryResponse.setTotlePrice(allOrdersResponses[0].getTotlePrice());
 
-            x=2;
-            new Apicalls(getContext(),Profile_Order_Details.this).get_All_Product_Of_order(order_id);
+            x = 2;
+            new Apicalls(getContext(), Profile_Order_Details.this).get_All_Product_Of_order(order_id);
 
 
         } else if (x == 2) {
             MainActivity.loading.setVisibility(View.GONE);
             Gson gson = new Gson();
 
-            ordersDetailsResponses = gson.fromJson(model.getResponse(),ModelOrdersDetailsResponse[].class);
+            ordersDetailsResponses = gson.fromJson(model.getResponse(), ModelOrdersDetailsResponse[].class);
 
-            for (int i =0; i<ordersDetailsResponses.length; i++){
+            for (int i = 0; i < ordersDetailsResponses.length; i++) {
 
                 ModelOrdersDetailsResponse ordersDetails = new ModelOrdersDetailsResponse();
 
@@ -185,7 +184,7 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
                 ordersDetails.setColor(ordersDetailsResponses[i].getColor());
                 ordersDetails.setColorEn(ordersDetailsResponses[i].getColorEn());
                 ordersDetails.setDatee(ordersDetailsResponses[i].getDatee());
-                ordersDetails.setDatee1(ordersDetailsResponses[i].getDatee1());
+                ordersDetails.setDateeeeee(ordersDetailsResponses[i].getDateeeeee());
                 ordersDetails.setDes(ordersDetailsResponses[i].getDes());
                 ordersDetails.setDesEn(ordersDetailsResponses[i].getDesEn());
                 ordersDetails.setExtraRequest(ordersDetailsResponses[i].getExtraRequest());
@@ -221,7 +220,7 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
                 ordersDetails.setTitleEn(ordersDetailsResponses[i].getTitleEn());
                 ordersDetails.setType(ordersDetailsResponses[i].getType());
                 ordersDetails.setTypeArmEn(ordersDetailsResponses[i].getTypeArmEn());
-
+                ordersDetails.setTypeArmEn(ordersDetailsResponses[i].getTypeArmEn());
 
 
                 ordersDetailsList.add(ordersDetails);
@@ -235,7 +234,6 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
 
 
         }
-
 
 
     }
@@ -394,15 +392,15 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
 //        List<Rcy_Cart_Model> all = adapter.retrieve();
 //        String id = saved_data.get_user_id(Objects.requireNonNull(getContext()));
         String address = tinyDB.getString("addressChoose");
-        Log.e("address",address);
+        Log.e("address", address);
 
 
         StringBuilder url =
                 new StringBuilder("http://app.alshal.sa/alshal.asmx/insert_orders?id_user=" +
-                        id + "&address=" +  txtaddress.getText().toString()  + "&totle_price=" + txtprice.getText().toString() + "&copon_code=" + copun);
+                        id + "&address=" + txtaddress.getText().toString() + "&totle_price=" + txtprice.getText().toString() + "&copon_code=" + copun);
 
 
-        Log.i("functionVolly: ", id + "/" + txtaddress.getText().toString()  + "/" + txtprice.getText().toString() + "/" +
+        Log.i("functionVolly: ", id + "/" + txtaddress.getText().toString() + "/" + txtprice.getText().toString() + "/" +
                 copun);
 
         for (int i = 0; i <= ordersDetailsList.size() - 1; i++) {
@@ -454,7 +452,7 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
 
         }
 
-        for (int s = 0; s <= ordersDetailsList.size()- 1; s++) {
+        for (int s = 0; s <= ordersDetailsList.size() - 1; s++) {
             assert ordersDetailsList.get(s) != null;
 
             if (ordersDetailsList.get(s).getItemWidth() != null) {
@@ -471,7 +469,7 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
         }
 
 
-        for (int s = 0; s <= ordersDetailsList.size()- 1; s++) {
+        for (int s = 0; s <= ordersDetailsList.size() - 1; s++) {
             assert ordersDetailsList.get(s) != null;
 
             if (ordersDetailsList.get(s).getItemArm() != null) {
@@ -488,7 +486,7 @@ public class Profile_Order_Details extends Fragment implements NetworkInterface 
         }
 
 
-        for (int s = 0; s <= ordersDetailsList.size()- 1; s++) {
+        for (int s = 0; s <= ordersDetailsList.size() - 1; s++) {
             assert ordersDetailsList.get(s) != null;
 
             if (ordersDetailsList.get(s).getItemAlkhasr() != null) {

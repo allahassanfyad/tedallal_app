@@ -67,7 +67,7 @@
                 android:id="@+id/btnChoose"
                 android:layout_width="77dp"
                 android:layout_height="25dp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorb"
                 android:textSize="12sp"
                 android:text="@string/choose"
                 android:fontFamily="@font/tajawal_medium"

@@ -392,7 +392,8 @@
             android:fontFamily="@font/tajawal_medium"
             android:text="@string/redo_order"
             android:textColor="@color/colorPrimary"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:visibility="gone"/>
 
 
     </LinearLayout>

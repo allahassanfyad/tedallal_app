@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,20 +58,23 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
 
     TinyDB tinyDB;
     Button btnbuy, btnusepromo;
-    TextView txtnaigbourstret, txtcityCountry, txtcodePhone, txttotal, txtfinaltotal, txtdeliveryprice, txttaxesprice, txtname;
+    TextView txtnaigbourstret, txtcityCountry, txtcodePhone, txttotal, txtfinaltotal, txtdeliveryprice, txttaxesprice, txtDiscountprice, txtname;
     EditText editpromo;
     Realm realm;
     Realm_adapter adapter;
     RecyclerView rcyConfirmorder;
     List<Rcy_Cart_Model> cart_models;
     LinearLayout lineareditaddress;
+    RelativeLayout relativeDiscount;
 
     String copun = "none";
     int delivary = 0;
     int taxes = 0;
+    int discount = 0;
     public static int editaddress = 0;
 
     int x = 0;
+    int d = 0;
 
     @Nullable
     @Override
@@ -98,7 +102,10 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
         txttaxesprice = view.findViewById(R.id.txtTaxesPrice);
         lineareditaddress = view.findViewById(R.id.linearEditAddress);
         txtname = view.findViewById(R.id.txtName);
+        relativeDiscount = view.findViewById(R.id.relativeDiscount);
+        txtDiscountprice = view.findViewById(R.id.txtPriceDiscount);
 
+        relativeDiscount.setVisibility(View.GONE);
 
         txtnaigbourstret.setText(tinyDB.getString("addressNaigbourStreet"));
         txtcityCountry.setText(tinyDB.getString("addressCountryCity"));
@@ -143,6 +150,7 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
 
 
                     x = 1;
+
                     MainActivity.loading.setVisibility(View.VISIBLE);
                     new Apicalls(getContext(), Confirm_Order_Fragment.this).add_Promo_Code(editpromo.getText().toString(), txtfinaltotal.getText().toString());
 
@@ -207,8 +215,9 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
 
             String totalAfterDisc = model.getResponse();
 
+            d = 1;
             txtfinaltotal.setText(totalAfterDisc);
-
+            totalPrices(txttotal, txtfinaltotal);
 
         } else if (x == 2) {
 
@@ -268,7 +277,21 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
 
         int totalPrices = toatalprice + delivary + taxes;
 
-        txtfinaltotal.setText("" + totalPrices);
+        if (d == 1) {
+            d = 0;
+
+            relativeDiscount.setVisibility(View.VISIBLE);
+            int finalprice = Integer.parseInt(txtfinaltotal.getText().toString());
+            discount = totalPrices - finalprice;
+            txtDiscountprice.setText(""+discount);
+
+
+        } else {
+
+            relativeDiscount.setVisibility(View.GONE);
+            txtfinaltotal.setText("" + totalPrices);
+
+        }
 
 
     }
@@ -285,8 +308,8 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
 
 
         StringBuilder url =
-                new StringBuilder("http://app.alshal.sa/alshal.asmx/insert_orders?id_user=" +
-                        id + "&address=" + address + "&totle_price=" + txttotal.getText().toString() + "&copon_code=" + copun);
+                new StringBuilder("http://tadallal.com/store_app.asmx/insert_orders?id_user=" +
+                        id + "&address=" + address + "&totle_price=" + txttotal.getText().toString() + "&final_totle_price=" + txtfinaltotal.getText().toString() + "&taxes=" + txttaxesprice.getText().toString() + "&discount=" + txtDiscountprice.getText().toString() + "&typepay=" + "cash" + "&copon_code=" + copun);
 
 
         Log.i("functionVolly: ", id + "/" + address + "/" + txttotal.getText().toString() + "/" +
@@ -312,101 +335,6 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
 
         }
 
-        for (int s = 0; s <= all.size() - 1; s++) {
-            assert all.get(s) != null;
-
-            if (all.get(s).getHieght() != null) {
-
-                url.append("&item_length=").append(Objects.requireNonNull(all.get(s)).getHieght());
-
-            } else {
-
-                url.append("&item_length=").append("none");
-
-            }
-
-        }
-
-        for (int s = 0; s <= all.size() - 1; s++) {
-            assert all.get(s) != null;
-            if (all.get(s).getTxtsize() != null) {
-
-                url.append("&item_size=").append(Objects.requireNonNull(all.get(s)).getTxtsize());
-
-            } else {
-
-                url.append("&item_size=").append("none");
-
-            }
-
-        }
-
-        for (int s = 0; s <= all.size() - 1; s++) {
-            assert all.get(s) != null;
-
-            if (all.get(s).getOverallwidth() != null) {
-
-                url.append("&item_width=").append(Objects.requireNonNull(all.get(s)).getOverallwidth());
-
-            } else {
-
-                url.append("&item_width=").append("none");
-
-            }
-
-
-        }
-
-
-        for (int s = 0; s <= all.size() - 1; s++) {
-            assert all.get(s) != null;
-
-            if (all.get(s).getSleeve() != null) {
-
-                url.append("&item_arm=").append(Objects.requireNonNull(all.get(s)).getSleeve());
-
-            } else {
-
-                url.append("&item_arm=").append("none");
-
-            }
-
-
-        }
-
-
-        for (int s = 0; s <= all.size() - 1; s++) {
-            assert all.get(s) != null;
-
-            if (all.get(s).getWaist() != null) {
-
-                url.append("&item_alkhasr=").append(Objects.requireNonNull(all.get(s)).getWaist());
-
-            } else {
-
-                url.append("&item_alkhasr=").append("none");
-
-            }
-
-
-        }
-
-
-        for (int s = 0; s <= all.size() - 1; s++) {
-            assert all.get(s) != null;
-
-            if (all.get(s).getKalosh() != null) {
-
-                url.append("&item_alkalosh=").append(Objects.requireNonNull(all.get(s)).getKalosh());
-
-            } else {
-
-                url.append("&item_alkalosh=").append("none");
-
-            }
-
-
-        }
 
         for (int s = 0; s <= all.size() - 1; s++) {
             assert all.get(s) != null;
@@ -426,6 +354,37 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
                 url.append("&extra_request=").append("none");
 
             }
+        }
+
+        for (int s = 0; s <= all.size() - 1; s++) {
+            assert all.get(s) != null;
+
+            if (all.get(s).getTxtColor() != null) {
+
+                url.append("&item_color=").append(Objects.requireNonNull(all.get(s)).getTxtColor());
+
+            } else {
+
+                url.append("&item_color=").append("none");
+
+            }
+
+
+        }
+
+
+        for (int s = 0; s <= all.size() - 1; s++) {
+            assert all.get(s) != null;
+            if (all.get(s).getTxtsize() != null) {
+
+                url.append("&item_size=").append(Objects.requireNonNull(all.get(s)).getTxtsize());
+
+            } else {
+
+                url.append("&item_size=").append("none");
+
+            }
+
         }
 
 

@@ -85,7 +85,7 @@ public class Rcy_Confirm_Order_Adapter extends RecyclerView.Adapter<RecyclerView
 
         Glide.with(context)
                 .load(songs.getImghome())
-                .placeholder(R.drawable.logo_tedallal)
+                .placeholder(R.drawable.holder_png)
                 .into(itemHome.imgphoto);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

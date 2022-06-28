@@ -88,7 +88,7 @@ public class Rcy_Cart_Adapter extends RecyclerView.Adapter<Rcy_Cart_Adapter.Item
 
         Glide.with(context)
                 .load(songs.getImghome())
-                .placeholder(R.drawable.logo_tedallal)
+                .placeholder(R.drawable.holder_png)
                 .into(itemeCartHolder.imgitemhome);
 
         holder.txtincrease.setOnClickListener(new View.OnClickListener() {

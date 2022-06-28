@@ -31,7 +31,7 @@ public enum Apiclient {
     ORDER_DETAILS("selecte_all_order_details", Collections.singletonList("id_order"), 16),
     GET_ALL_PRODUCT_OF_ORDER("selecte_all_product_of_orders", Collections.singletonList("id_order"), 17),
     GET_HOME_SLIDER("select_slider", null, 18),
-    SEARCH("search_product", Arrays.asList("id_user", "search_text"), 19),
+    SEARCH("search_product", Arrays.asList("id_user", "search_text", "lan"), 19),
     DELETE_ADDRESS("delete_address_user", Collections.singletonList("id_address"), 20),
     EDIT_ADDRESS("update_address_user", Arrays.asList("name", "country", "city", "area", "street", "posta", "phone", "id_user", "id_address"), 21),
     GET_ALL_COUNTRIES("selecte_countries", null, 22),
@@ -53,7 +53,10 @@ public enum Apiclient {
     GET_Product_Sizes("selecte_size_of_product", Collections.singletonList("id_product"), 38),
     GET_Product_color("selecte_color_of_product", Collections.singletonList("id_product"), 39),
     GET_DELIVERY_PRICE("select_value_delivery", null, 40),
-    GET_TAXES_PRICE("select_taxes", null, 41);
+    GET_TAXES_PRICE("select_taxes", null, 41),
+    GET_ALL_PRODUCT_BY_OFFER("select_all_product_offer", Collections.singletonList("id_user"), 42),
+    GET_ALL_SHOPS("selecte_all_shopes", null, 43),
+    GET_ALL_PRODUCT_BY_SHOPS("select_all_product_by_shops", Arrays.asList("id_user","id_supplier"), 44);
 
 
     //--------------------------------------

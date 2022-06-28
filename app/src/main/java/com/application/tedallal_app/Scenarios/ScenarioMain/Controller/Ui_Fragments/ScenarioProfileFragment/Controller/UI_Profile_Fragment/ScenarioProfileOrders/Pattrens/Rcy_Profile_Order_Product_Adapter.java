@@ -70,7 +70,7 @@ public class Rcy_Profile_Order_Product_Adapter extends RecyclerView.Adapter<Rcy_
 
         Glide.with(context)
                 .load(songs.getImghome())
-                .placeholder(R.drawable.logo_tedallal)
+                .placeholder(R.drawable.holder_png)
                 .into(itemeCartHolder.imgitemhome);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

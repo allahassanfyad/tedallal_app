@@ -88,11 +88,12 @@ public class Rcy_Best_Selling_Adapter extends RecyclerView.Adapter<RecyclerView.
         }
 
         itemHome.txtprice.setText(songs.getPrice());
+        itemHome.txtpriceDiscount.setText(songs.getPriceDiscount());
 
 
         Glide.with(context)
                 .load(songs.getImg1())
-                .placeholder(R.drawable.logo_tedallal)
+                .placeholder(R.drawable.holder_png)
                 .into(itemHome.imgphoto);
 
         if (songs.getFavouret() == true) {
@@ -110,7 +111,7 @@ public class Rcy_Best_Selling_Adapter extends RecyclerView.Adapter<RecyclerView.
 
                 if (saved_data.get_user_id(context).equals("0") || saved_data.get_switch_checked(context) == false) {
 
-                    Objects.requireNonNull((AppCompatActivity)context).finish();
+                    Objects.requireNonNull((AppCompatActivity) context).finish();
                     MainActivity.login = 1;
                     context.startActivity(new Intent(context, SignIn.class));
 
@@ -351,7 +352,7 @@ public class Rcy_Best_Selling_Adapter extends RecyclerView.Adapter<RecyclerView.
     public static class notificationHolder extends RecyclerView.ViewHolder {
 
         ImageView imgphoto, imgFav;
-        TextView txttitle, txtprice;
+        TextView txttitle, txtprice, txtpriceDiscount;
 //        LinearLayout linearupcoming;
 //        ShimmerFrameLayout container;
 
@@ -362,6 +363,7 @@ public class Rcy_Best_Selling_Adapter extends RecyclerView.Adapter<RecyclerView.
             imgphoto = itemView.findViewById(R.id.imgPhoto);
             imgFav = itemView.findViewById(R.id.imgFav);
             txtprice = itemView.findViewById(R.id.txtPrice);
+            txtpriceDiscount = itemView.findViewById(R.id.txtPriceDiscount);
             txttitle = itemView.findViewById(R.id.txtTitle);
 //            linearupcoming = itemView.findViewById(R.id.linearUpComing);
 
@@ -376,6 +378,6 @@ public class Rcy_Best_Selling_Adapter extends RecyclerView.Adapter<RecyclerView.
                 .getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics dm = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(dm);
-        return dm.widthPixels-185;
+        return dm.widthPixels - 185;
     }
 }

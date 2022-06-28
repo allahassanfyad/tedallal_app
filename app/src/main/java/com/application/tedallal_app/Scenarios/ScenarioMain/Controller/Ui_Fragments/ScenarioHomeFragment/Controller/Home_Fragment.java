@@ -11,12 +11,14 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -30,7 +32,12 @@ import com.application.tedallal_app.NetworkLayer.Apicalls;
 import com.application.tedallal_app.NetworkLayer.NetworkInterface;
 import com.application.tedallal_app.NetworkLayer.ResponseModel;
 import com.application.tedallal_app.R;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.Controller.Add_Cart_Fragment;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.Model.mode_introduction;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioOffers.Controller.Offers_Fragment;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioOffers.Patterns.Rcy_Offers_Adapter;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Controller.Shops_Fragment;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Patterns.Rcy_Shops_Product_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.MainActivity;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Controller.UI_Home_Fragment.ScenarioHomeDetails.Model.ModelAllProductByCategoreyResponse;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Model.ModelAllCategoryResponse;
@@ -65,7 +72,7 @@ public class Home_Fragment extends Fragment implements IFOnBackPressed, NetworkI
     private LinearLayout linearindecator;
     ModelHomeSlider[] homeSliders;
     TinyDB tinyDB;
-
+    Button btnoffers, btnshopd;
     int currentPage = 0;
     int NUM_PAGES = 0;
     public static Timer timer;
@@ -88,14 +95,43 @@ public class Home_Fragment extends Fragment implements IFOnBackPressed, NetworkI
         rcyHome = view.findViewById(R.id.rcyHome);
         rcybestselling = view.findViewById(R.id.rcyBestSelling);
         rcyrecentadded = view.findViewById(R.id.rcyRecentlyAdded);
+        btnoffers = view.findViewById(R.id.btnOffers);
+        btnshopd = view.findViewById(R.id.btnShops);
 
         linearindecator = view.findViewById(R.id.linearIndicator);
 //        txthometitle = view.findViewById(R.id.txtHomeTitle);
         timer = new Timer(); // This will create a new Thread
 
+        Rcy_Offers_Adapter.offers = 0;
+        Rcy_Shops_Product_Adapter.shops = 0;
+
         x = 1;
         MainActivity.loading.setVisibility(View.VISIBLE);
         new Apicalls(getContext(), Home_Fragment.this).get_Home_Title();
+
+        btnoffers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction fr = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new Offers_Fragment());
+                fr.addToBackStack(null);
+                fr.commit();
+
+            }
+        });
+
+        btnshopd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction fr = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new Shops_Fragment());
+                fr.addToBackStack(null);
+                fr.commit();
+
+            }
+        });
 
 
         return view;

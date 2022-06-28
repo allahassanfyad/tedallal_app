@@ -38,7 +38,12 @@ import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAllSizes.Controller.All_Sizes_Fragment;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioCart.Controller.Cart_Fragment;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioCart.Model.Rcy_Cart_Model;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioOffers.Controller.Offers_Fragment;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioOffers.Patterns.Rcy_Offers_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioOrders.Pattrens.Rcy_Order_Product_Adapter;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Controller.Shop_Product_Fragment;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Controller.Shops_Fragment;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Patterns.Rcy_Shops_Product_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.MainActivity;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioFavouriteFragment.Controller.Favourite_Fragment;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Controller.Home_Fragment;
@@ -70,7 +75,7 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
     private LinearLayout linearindecator;
     TinyDB tinyDB;
     List<String> images = new ArrayList<>();
-    TextView txttitle, txtprice, txtdesc,txtpriceDis;
+    TextView txttitle, txtprice, txtdesc, txtpriceDis;
     Button btnaddtocart;
     Realm realm;
     EditText editquntity;
@@ -126,7 +131,6 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
         txtdesc = view.findViewById(R.id.txtdesc);
         txtpriceDis = view.findViewById(R.id.txtPriceDiscount);
         txtprice = view.findViewById(R.id.txtPrice);
-
 
 
         spinnerColor = view.findViewById(R.id.spinnerColor);
@@ -229,6 +233,7 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
                     c.setProductid(Id);
                     c.setTxttitle(title);
                     c.setTxtprice(price);
+                    c.setTxtColor(color);
                     c.setTxtnumberchoose(quntty);
                     c.setImghome(Imagecart);
                     c.setTxtsize(size);
@@ -364,6 +369,24 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
             fr.addToBackStack(null);
             fr.commit();
 
+        } else if (Rcy_Offers_Adapter.offers == 1) {
+
+            Rcy_Offers_Adapter.offers = 0;
+
+            FragmentTransaction fr = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+            fr.replace(R.id.fragment_container, new Offers_Fragment());
+            fr.addToBackStack(null);
+            fr.commit();
+
+        } else if (Rcy_Shops_Product_Adapter.shops == 1) {
+
+            Rcy_Shops_Product_Adapter.shops = 0;
+
+            FragmentTransaction fr = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+            fr.replace(R.id.fragment_container, new Shop_Product_Fragment());
+            fr.addToBackStack(null);
+            fr.commit();
+
         } else {
 
             FragmentTransaction fr = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
@@ -494,7 +517,13 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
 
 
                 txtprice.setText(productDetailsResponses[0].getPrice());
+                if (saved_data.get_lang_num(getContext()).equals("ar")) {
+                    txtdesc.setText(productDetailsResponses[0].getDes());
+                } else if (saved_data.get_lang_num(getContext()).equals("en")) {
+                    txtdesc.setText(productDetailsResponses[0].getDesEn());
+                }
                 txtpriceDis.setText(productDetailsResponses[0].getPriceDiscount());
+
                 productId = String.valueOf(productDetailsResponses[0].getId());
 
                 models.add(new mode_introduction(productDetailsResponses[0].getImg1()));
@@ -673,7 +702,29 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
     public void OnError(VolleyError error) {
         MainActivity.loading.setVisibility(View.GONE);
         Log.e("error", error.toString());
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (timer != null) {
+            timer.cancel();
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (timer != null) {
+            timer.cancel();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        timer.cancel();
 
     }
 }

@@ -634,7 +634,7 @@
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight=".65"
+                                android:layout_weight=".3"
                                 android:gravity="center_vertical">
 
 
@@ -655,7 +655,68 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight=".35"
+                                android:gravity="end|center">
+
+                                <RelativeLayout
+                                    android:id="@+id/relativeDiscount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp">
+
+                                    <View
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="1dp"
+                                        android:layout_centerInParent="true"
+                                        android:layout_toStartOf="@+id/linearDiscount"
+                                        android:layout_toEndOf="@+id/linearDiscount"
+                                        android:background="@color/colorRed" />
+
+                                    <LinearLayout
+                                        android:id="@+id/linearDiscount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:orientation="horizontal">
+
+                                        <com.application.tedallal_app.Utils.TextViewWithFont
+                                            android:id="@+id/txtPriceDiscount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/tajawal_regular"
+                                            android:gravity="center"
+                                            android:maxLines="1"
+                                            android:singleLine="true"
+                                            android:text="650"
+                                            android:textColor="@color/colorRed"
+                                            android:textSize="14sp" />
+
+                                        <com.application.tedallal_app.Utils.TextViewWithFont
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:fontFamily="@font/tajawal_regular"
+                                            android:gravity="center"
+                                            android:maxLines="1"
+                                            android:singleLine="true"
+                                            android:text="@string/ryal"
+                                            android:textColor="@color/colorRed"
+                                            android:textSize="14sp" />
+
+
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".35"
                                 android:gravity="center">
+
 
                                 <LinearLayout
                                     android:layout_width="wrap_content"

@@ -210,6 +210,33 @@ public class Apicalls {
     //----------------------------------------------------------------------------------------------
 
 
+    public void get_All_Product_By_Offers(final String id_user) {
+
+        apiRouter.performRequest(Apiclient.GET_ALL_PRODUCT_BY_OFFER.getURL(), Apiclient.GET_ALL_PRODUCT_BY_OFFER.getParams(), Collections.singletonList(id_user), Request.Method.POST, Apiclient.GET_ALL_PRODUCT_BY_OFFER.getCode());
+
+    }
+//----------------------------------------------------------------------------------------------
+
+
+    public void get_All_Product_By_Shops(final String id_user,final String id_supplier) {
+
+        apiRouter.performRequest(Apiclient.GET_ALL_PRODUCT_BY_SHOPS.getURL(), Apiclient.GET_ALL_PRODUCT_BY_SHOPS.getParams(), Arrays.asList(id_user,id_supplier), Request.Method.POST, Apiclient.GET_ALL_PRODUCT_BY_SHOPS.getCode());
+
+    }
+
+    //----------------------------------------------------------------------------------------------
+
+
+    public void get_All_Shops() {
+
+        apiRouter.performRequest(Apiclient.GET_ALL_SHOPS.getURL(), Apiclient.GET_ALL_SHOPS.getParams(), null, Request.Method.POST, Apiclient.GET_ALL_SHOPS.getCode());
+
+    }
+
+
+    //----------------------------------------------------------------------------------------------
+
+
     public void get_single_Product_Details(final String id_prodct) {
 
 
@@ -263,9 +290,9 @@ public class Apicalls {
     //----------------------------------------------------------------------------------------------
 
 
-    public void get_Search(final String id_user, final String search_text) {
+    public void get_Search(final String id_user, final String search_text, final String lan) {
 
-        apiRouter.performRequest(Apiclient.SEARCH.getURL(), Apiclient.SEARCH.getParams(), Arrays.asList(id_user, search_text), Request.Method.POST, Apiclient.SEARCH.getCode());
+        apiRouter.performRequest(Apiclient.SEARCH.getURL(), Apiclient.SEARCH.getParams(), Arrays.asList(id_user, search_text, lan), Request.Method.POST, Apiclient.SEARCH.getCode());
 
 
     }

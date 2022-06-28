@@ -80,7 +80,7 @@ public class Rcy_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         Glide.with(context)
                 .load(songs.getImg())
-                .placeholder(R.drawable.logo_tedallal)
+                .placeholder(R.drawable.holder_png)
                 .into(itemHome.imgHome);
 
 

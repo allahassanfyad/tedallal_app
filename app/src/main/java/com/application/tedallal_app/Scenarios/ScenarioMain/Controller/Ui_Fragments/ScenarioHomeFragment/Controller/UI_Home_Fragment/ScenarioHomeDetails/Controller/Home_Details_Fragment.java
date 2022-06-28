@@ -81,7 +81,7 @@ public class Home_Details_Fragment extends Fragment implements IFOnBackPressed, 
 
 
         x = 1;
-        String category = tinyDB.getString("CategoryName");
+        String category = tinyDB.getString("CategoryIdd");
         MainActivity.loading.setVisibility(View.VISIBLE);
         new Apicalls(getContext(), Home_Details_Fragment.this).get_All_Product_By_Category(category, saved_data.get_user_id(getContext()));
 

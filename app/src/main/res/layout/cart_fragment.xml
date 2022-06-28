@@ -63,7 +63,7 @@
                     android:id="@+id/btnContinueOrder"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:textColor="@color/colorw"
+                    android:textColor="@color/colorb"
                     android:textSize="19sp"
                     android:text="@string/complete_the_request"
                     android:layout_marginStart="35dp"

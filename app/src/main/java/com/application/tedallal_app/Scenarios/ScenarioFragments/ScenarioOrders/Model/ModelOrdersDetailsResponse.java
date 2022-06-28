@@ -17,8 +17,8 @@ public class ModelOrdersDetailsResponse{
 	private String colorEn;
 	@SerializedName("Datee")
 	private String datee;
-	@SerializedName("datee1")
-	private String datee1;
+	@SerializedName("dateeeeee")
+	private String dateeeeee;
 	@SerializedName("des")
 	private String des;
 	@SerializedName("des_en")
@@ -116,12 +116,15 @@ public class ModelOrdersDetailsResponse{
 	public String getDatee(){
 		return this.datee;
 	}
-	public void setDatee1(String datee1){
-		this.datee1 = datee1;
+
+	public String getDateeeeee() {
+		return dateeeeee;
 	}
-	public String getDatee1(){
-		return this.datee1;
+
+	public void setDateeeeee(String dateeeeee) {
+		this.dateeeeee = dateeeeee;
 	}
+
 	public void setDes(String des){
 		this.des = des;
 	}
@@ -353,7 +356,7 @@ public class ModelOrdersDetailsResponse{
 		color = (String) jsonObject.opt("color");
 		colorEn = (String) jsonObject.opt("color_en");
 		datee = (String) jsonObject.opt("Datee");
-		datee1 = (String) jsonObject.opt("datee1");
+		dateeeeee = (String) jsonObject.opt("dateeeeee");
 		des = (String) jsonObject.opt("des");
 		desEn = (String) jsonObject.opt("des_en");
 		extraRequest = (String) jsonObject.opt("extra_request");
@@ -403,7 +406,7 @@ public class ModelOrdersDetailsResponse{
 			jsonObject.put("color", color);
 			jsonObject.put("color_en", colorEn);
 			jsonObject.put("Datee", datee);
-			jsonObject.put("datee1", datee1);
+			jsonObject.put("dateeeeee", dateeeeee);
 			jsonObject.put("des", des);
 			jsonObject.put("des_en", desEn);
 			jsonObject.put("extra_request", extraRequest);

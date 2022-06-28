@@ -72,20 +72,18 @@ public class Rcy_Order_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 //        }
 
 
+//        String datetime = songs.getDatee();
+//        String[] splitingdate = datetime.split(" ");
+//        String date = splitingdate[0];
+//        String time = splitingdate[1];
+//        Log.e("dateTime", date + "......." + time);
 
-        String datetime = songs.getDatee();
-        String[] splitingdate = datetime.split(" ");
-        String date = splitingdate[0];
-        String time = splitingdate[1];
-        Log.e("dateTime", date + "......." + time);
-
-        itemHome.txttime.setText(time);
-        itemHome.txtdate.setText(date);
+        itemHome.txttime.setText(songs.getTimee());
+        itemHome.txtdate.setText(songs.getDateeeeee());
 
         itemHome.txtstaus.setText(songs.getStatus());
         itemHome.txtprice.setText(songs.getTotlePrice());
-        itemHome.txtordernumber.setText(""+songs.getId());
-
+        itemHome.txtordernumber.setText("" + songs.getId());
 
 
         itemHome.btnorderdetails.setOnClickListener(new View.OnClickListener() {

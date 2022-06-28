@@ -146,15 +146,15 @@ public class Order_Details_Fragment extends Fragment implements IFOnBackPressed,
             txtordernumber.setText("" + allOrdersResponses[0].getId());
             copun = allOrdersResponses[0].getCoponCode();
 
-            String datetime = allOrdersResponses[0].getDatee();
+//            String datetime = allOrdersResponses[0].getDatee();
+//
+//            String[] splitingdate = datetime.split(" ");
+//            String date = splitingdate[0];
+//            String time = splitingdate[1];
+//            Log.e("dateTime", date + "......." + time);
 
-            String[] splitingdate = datetime.split(" ");
-            String date = splitingdate[0];
-            String time = splitingdate[1];
-            Log.e("dateTime", date + "......." + time);
 
-
-            txtdate.setText(date);
+            txtdate.setText(allOrdersResponses[0].getDateeeeee());
             txtaddress.setText(allOrdersResponses[0].getAddress());
 
 //        categoryResponse.setId(allOrdersResponses[0].getId());
@@ -195,7 +195,7 @@ public class Order_Details_Fragment extends Fragment implements IFOnBackPressed,
                 ordersDetails.setColor(ordersDetailsResponses[i].getColor());
                 ordersDetails.setColorEn(ordersDetailsResponses[i].getColorEn());
                 ordersDetails.setDatee(ordersDetailsResponses[i].getDatee());
-                ordersDetails.setDatee1(ordersDetailsResponses[i].getDatee1());
+                ordersDetails.setDateeeeee(ordersDetailsResponses[i].getDateeeeee());
                 ordersDetails.setDes(ordersDetailsResponses[i].getDes());
                 ordersDetails.setDesEn(ordersDetailsResponses[i].getDesEn());
                 ordersDetails.setExtraRequest(ordersDetailsResponses[i].getExtraRequest());

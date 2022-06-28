@@ -30,19 +30,19 @@ public class Splash extends AppCompatActivity {
 
         if (language.equals("") || language == null) {
 
-            language = Locale.getDefault().getDisplayLanguage();
-            Log.e("language", language);
-
-            if (language.equals("العربية")) {
+//            language = Locale.getDefault().getDisplayLanguage();
+//            Log.e("language", language);
+//
+//            if (language.equals("العربية")) {
 
                 send_data.SET_LANGUAGE_NUM(Splash.this, String.valueOf("ar"));
                 changeLang(Splash.this, "ar");
-            } else {
-
-                send_data.SET_LANGUAGE_NUM(Splash.this, String.valueOf("en"));
-                changeLang(Splash.this, "en");
-
-            }
+//            } else {
+//
+//                send_data.SET_LANGUAGE_NUM(Splash.this, String.valueOf("en"));
+//                changeLang(Splash.this, "en");
+//
+//            }
 
             Log.e("lang", String.valueOf(Locale.getDefault().getDisplayLanguage()));
             Log.e("SavedLang", saved_data.get_lang_num(Splash.this));

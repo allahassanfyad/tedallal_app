@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray3"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginEnd="@dimen/_10sdp">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="80dp"
+                                    android:layout_height="90dp"
+                                    android:background="@color/colorw"
+                                    android:innerRadius="0dp"
+                                    android:shape="oval"
+                                    android:thicknessRatio="2"
+                                    app:cardBackgroundColor="@color/colorPrimary"
+                                    app:cardCornerRadius="10dp">
+
+
+                                    <ImageView
+                                        android:id="@+id/imgLogo"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/logo_tedallal" />
+
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/relativeStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="3dp"
+                                android:background="@drawable/circle_background_green_small" />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/txtTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/tajawal_bold"
+                                android:maxLines="2"
+                                android:text="H&amp;M"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="20sp" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="8dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="1dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/open_svg" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/txtOpenTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/tajawal_regular"
+                                    android:maxLines="2"
+                                    android:text="opening time"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="15sp" />
+
+                                <!--                    <TextView-->
+                                <!--                        android:layout_width="wrap_content"-->
+                                <!--                        android:layout_height="wrap_content"-->
+                                <!--                        android:layout_marginStart="2dp"-->
+                                <!--                        android:ellipsize="end"-->
+                                <!--                        android:fontFamily="@font/segoe"-->
+                                <!--                        android:maxLines="2"-->
+                                <!--                        android:text="/"-->
+                                <!--                        android:textColor="@color/colorAccent"-->
+                                <!--                        android:textSize="7sp" />-->
+
+
+                                <!--                    <TextView-->
+                                <!--                        android:layout_width="wrap_content"-->
+                                <!--                        android:layout_height="wrap_content"-->
+                                <!--                        android:layout_marginStart="2dp"-->
+                                <!--                        android:ellipsize="end"-->
+                                <!--                        android:fontFamily="@font/segoe"-->
+                                <!--                        android:maxLines="2"-->
+                                <!--                        android:text="تمت الاضافة:"-->
+                                <!--                        android:textColor="@color/colorAccent"-->
+                                <!--                        android:textSize="7sp" />-->
+
+                                <!--                    <TextView-->
+                                <!--                        android:layout_width="wrap_content"-->
+                                <!--                        android:layout_height="wrap_content"-->
+                                <!--                        android:layout_marginStart="2dp"-->
+                                <!--                        android:ellipsize="end"-->
+                                <!--                        android:fontFamily="@font/segoe"-->
+                                <!--                        android:maxLines="2"-->
+                                <!--                        android:text="2020-9-20 11:51"-->
+                                <!--                        android:textColor="@color/colorAccent"-->
+                                <!--                        android:textSize="7sp" />-->
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="8dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="1dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/closed_svg" />
+                                </LinearLayout>
+
+
+                                <TextView
+                                    android:id="@+id/txtClosedTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/tajawal_regular"
+                                    android:maxLines="2"
+                                    android:text="closed time"
+                                    android:textColor="@color/colorb"
+                                    android:textSize="15sp" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:orientation="vertical">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcyShopsProduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+
+</LinearLayout>

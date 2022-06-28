@@ -102,7 +102,7 @@ public class Rcy_Sub_Category_Adapter extends RecyclerView.Adapter<RecyclerView.
 
         Glide.with(context)
                 .load(songs.getImgsub())
-                .placeholder(R.drawable.logo_tedallal)
+                .placeholder(R.drawable.holder_png)
                 .listener(new RequestListener<Drawable>() {
                     @Override
                     public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {

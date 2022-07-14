@@ -137,4 +137,8 @@ dependencies {
     implementation 'com.github.curioustechizen.android-ago:library:1.4.0'
 
     implementation  'org.greenrobot:eventbus:3.0.0'
+
+    // myfatourah Implement
+    implementation 'com.myfatoorah:myfatoorah:2.2.7'
+
 }

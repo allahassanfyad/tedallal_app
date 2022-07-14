@@ -170,8 +170,20 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
             @Override
             public void onClick(View v) {
 
-                MainActivity.loading.setVisibility(View.VISIBLE);
-                send_order(copun);
+//                MainActivity.loading.setVisibility(View.VISIBLE);
+//                send_order(copun);
+
+                tinyDB.putString("finalAmount", txtfinaltotal.getText().toString());
+                tinyDB.putString("TxtTotal", txttotal.getText().toString());
+                tinyDB.putString("txtTaxesPrice", txttaxesprice.getText().toString());
+                tinyDB.putString("txtDiscountPrice", txtDiscountprice.getText().toString());
+                tinyDB.putString("copun",copun);
+
+
+                FragmentTransaction fr = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new Payment_Fragment());
+                fr.addToBackStack(null);
+                fr.commit();
 
             }
         });
@@ -283,7 +295,7 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
             relativeDiscount.setVisibility(View.VISIBLE);
             int finalprice = Integer.parseInt(txtfinaltotal.getText().toString());
             discount = totalPrices - finalprice;
-            txtDiscountprice.setText(""+discount);
+            txtDiscountprice.setText("" + discount);
 
 
         } else {
@@ -445,5 +457,6 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
 
 
     }
+
 
 }

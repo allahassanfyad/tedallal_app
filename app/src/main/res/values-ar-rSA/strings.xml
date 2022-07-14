@@ -250,5 +250,7 @@
     <string name="snapchat">سناب شات</string>
     <string name="shops">المتاجر</string>
     <string name="offers">العروض</string>
-    <string name="Color">اللون</string>
+    <string name="Color">اللون</string>\
+    <string name="amount">القيمة:-</string>
+    <string name="proceed_with_payment">المضي قدما في الدفع</string>
 </resources>

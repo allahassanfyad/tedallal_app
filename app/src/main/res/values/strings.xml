@@ -42,7 +42,7 @@ tadallal everything you want to order online…..
     <string name="continue_">Continue</string>
     <string name="back">back</string>
     <string name="_966">966+</string>
-    <string name="ryal">KW</string>
+    <string name="ryal">KWD</string>
     <string name="description">Description</string>
     <string name="style">Style</string>
     <string name="color">Color</string>
@@ -230,4 +230,6 @@ These conditions are in effect for the user who is in any of the European Union 
     <string name="shops">Shops</string>
     <string name="offers">Offers</string>
     <string name="Color">Color</string>
+    <string name="amount">Amount:-</string>
+    <string name="proceed_with_payment">Proceed with payment</string>
 </resources>

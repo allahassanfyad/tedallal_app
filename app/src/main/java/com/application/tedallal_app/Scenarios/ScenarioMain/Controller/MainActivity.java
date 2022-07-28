@@ -110,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
 //        linearTwitter.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -165,15 +167,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        LinearLayout linearRegister = findViewById(R.id.linearRegister);
 
         if (saved_data.get_switch_checked(MainActivity.this) == true) {
 
             txtlogout.setText(getString(R.string.logout));
+            linearRegister.setVisibility(View.GONE);
 
         } else {
 
             txtlogout.setText(getString(R.string.login));
+            linearRegister.setVisibility(View.VISIBLE);
 
         }
 
@@ -395,6 +399,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
 //
 
         //Car Information
@@ -483,6 +490,8 @@ public class MainActivity extends AppCompatActivity {
                                     loadFragment(home_fragment);
 
                                     Toasty.success(Objects.requireNonNull(MainActivity.this), R.string.logout_successfully, Toast.LENGTH_LONG).show();
+
+                                    linearRegister.setVisibility(View.VISIBLE);
 
 
                                 }
@@ -633,6 +642,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    protected void onResume() {
+        LinearLayout linearRegister = findViewById(R.id.linearRegister);
+
+        if (saved_data.get_switch_checked(MainActivity.this) == false) {
+
+            linearRegister.setVisibility(View.VISIBLE);
+
+        }else {
+            linearRegister.setVisibility(View.GONE);
+        }
+        Log.e("resume","1");
+        super.onResume();
+
+    }
 
     public void menu() {
         LinearLayout menu = findViewById(R.id.linearMenuImage);

@@ -229,7 +229,7 @@ public class Payment_Fragment extends Fragment {
 
         StringBuilder url =
                 new StringBuilder("http://tadallal.com/store_app.asmx/insert_orders?id_user=" +
-                        id + "&address=" + address + "&totle_price=" + txttotal + "&final_totle_price=" + txtamount.getText().toString() + "&taxes=" + txttaxprice + "&discount=" + txtdiscountprice + "&typepay=" + "cash" + "&copon_code=" + copun);
+                        id + "&address=" + address + "&totle_price=" + txttotal + "&final_totle_price=" + txtamount.getText().toString() + "&taxes=" + txttaxprice + "&discount=" + txtdiscountprice + "&typepay=" + "paymentgateway" + "&copon_code=" + copun);
 
 
         Log.i("functionVolly: ", id + "/" + address + "/" + txttotal + "/" +

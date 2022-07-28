@@ -63,8 +63,8 @@ public class Rcy_Cart_Adapter extends RecyclerView.Adapter<Rcy_Cart_Adapter.Item
 
         ItemeCartHolder itemeCartHolder = (ItemeCartHolder) holder;
 
-        int price = 0;
-        int number = 0;
+        double price = 0;
+        double number = 0;
 
         if (songs.getTxtprice().equals("")||songs.getTxtprice() == null){
 
@@ -72,13 +72,13 @@ public class Rcy_Cart_Adapter extends RecyclerView.Adapter<Rcy_Cart_Adapter.Item
 
         }else {
 
-             price = Integer.parseInt(songs.getTxtprice());
+             price = Double.parseDouble(songs.getTxtprice());
 
         }
-        number = Integer.parseInt(songs.getTxtnumberchoose());
+        number = Double.parseDouble(songs.getTxtnumberchoose());
 
 
-        int totalpricebefortax = price * number;
+        double totalpricebefortax =  (price * number);
 
 
         itemeCartHolder.txttitle.setText(songs.getTxttitle());
@@ -111,19 +111,19 @@ public class Rcy_Cart_Adapter extends RecyclerView.Adapter<Rcy_Cart_Adapter.Item
                     adapter.updaatenumberofboxes(songs.getId(), holder.txtnumber.getText().toString());
 
 //                    totalPrices();
-                    int priceincreace = 0;
+                    double priceincreace = 0;
                     if (songs.getTxtprice().equals("")||songs.getTxtprice() == null){
 
                         priceincreace = 10;
 
                     }else {
 
-                        priceincreace = Integer.parseInt(songs.getTxtprice());
+                        priceincreace = Double.parseDouble(songs.getTxtprice());
 
                     }
-                    int number = Integer.parseInt(songs.getTxtnumberchoose());
+                    double number = Double.parseDouble(songs.getTxtnumberchoose());
 
-                    int totalpricebefortax = priceincreace * number;
+                    double totalpricebefortax = priceincreace * number;
 
                     itemeCartHolder.txtprice.setText(""+totalpricebefortax);
 
@@ -139,19 +139,19 @@ public class Rcy_Cart_Adapter extends RecyclerView.Adapter<Rcy_Cart_Adapter.Item
                     adapter.updaatenumberofboxes(songs.getId(), holder.txtnumber.getText().toString());
 //                    totalPrices();
 
-                    int priceincreace = 0;
+                    double priceincreace = 0;
                     if (songs.getTxtprice().equals("")||songs.getTxtprice() == null){
 
                         priceincreace = 10;
 
                     }else {
 
-                        priceincreace = Integer.parseInt(songs.getTxtprice());
+                        priceincreace = Double.parseDouble(songs.getTxtprice());
 
                     }
-                    int number = Integer.parseInt(songs.getTxtnumberchoose());
+                    double number = Double.parseDouble(songs.getTxtnumberchoose());
 
-                    int totalpricebefortax = priceincreace * number;
+                    double totalpricebefortax = priceincreace * number;
 
                     itemeCartHolder.txtprice.setText(""+totalpricebefortax);
 
@@ -177,19 +177,19 @@ public class Rcy_Cart_Adapter extends RecyclerView.Adapter<Rcy_Cart_Adapter.Item
                     adapter.updaatenumberofboxes(songs.getId(), holder.txtnumber.getText().toString());
 //                    totalPrices();
 
-                    int pricedecrease = 0;
+                    double pricedecrease = 0;
                     if (songs.getTxtprice().equals("")||songs.getTxtprice() == null){
 
                         pricedecrease = 10;
 
                     }else {
 
-                        pricedecrease = Integer.parseInt(songs.getTxtprice());
+                        pricedecrease = Double.parseDouble(songs.getTxtprice());
 
                     }
-                    int number = Integer.parseInt(songs.getTxtnumberchoose());
+                    double number = Double.parseDouble(songs.getTxtnumberchoose());
 
-                    int totalpricebefortax = pricedecrease * number;
+                    double totalpricebefortax = pricedecrease * number;
 
                     itemeCartHolder.txtprice.setText(""+totalpricebefortax);
                     MainActivity mainActivity = new MainActivity();
@@ -204,7 +204,7 @@ public class Rcy_Cart_Adapter extends RecyclerView.Adapter<Rcy_Cart_Adapter.Item
                     adapter.updaatenumberofboxes(songs.getId(), holder.txtnumber.getText().toString());
 //                    totalPrices();
 
-                    int pricedecrease = 0;
+                    double pricedecrease = 0;
                     if (songs.getTxtprice().equals("")||songs.getTxtprice() == null){
 
                         pricedecrease = 10;
@@ -214,9 +214,9 @@ public class Rcy_Cart_Adapter extends RecyclerView.Adapter<Rcy_Cart_Adapter.Item
                         pricedecrease = Integer.parseInt(songs.getTxtprice());
 
                     }
-                    int number = Integer.parseInt(songs.getTxtnumberchoose());
+                    double number = Double.parseDouble(songs.getTxtnumberchoose());
 
-                    int totalpricebefortax = pricedecrease * number;
+                    double totalpricebefortax = pricedecrease * number;
 
                     itemeCartHolder.txtprice.setText(""+totalpricebefortax);
                     MainActivity mainActivity = new MainActivity();

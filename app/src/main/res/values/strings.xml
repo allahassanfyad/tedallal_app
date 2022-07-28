@@ -232,4 +232,6 @@ These conditions are in effect for the user who is in any of the European Union 
     <string name="Color">Color</string>
     <string name="amount">Amount:-</string>
     <string name="proceed_with_payment">Proceed with payment</string>
+    <string name="pay_with_visa">Pay With Visa</string>
+    <string name="pay_with_cash">Pay With Cash</string>
 </resources>

@@ -57,7 +57,7 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
     private View view;
 
     TinyDB tinyDB;
-    Button btnbuy, btnusepromo;
+    Button btnbuy, btnusepromo, btnbuycash;
     TextView txtnaigbourstret, txtcityCountry, txtcodePhone, txttotal, txtfinaltotal, txtdeliveryprice, txttaxesprice, txtDiscountprice, txtname;
     EditText editpromo;
     Realm realm;
@@ -90,6 +90,7 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
         cart_models = adapter.retrieve();
 
         btnbuy = view.findViewById(R.id.btnBuy);
+        btnbuycash = view.findViewById(R.id.btnBuyCash);
         txtnaigbourstret = view.findViewById(R.id.txtNaigbourStreet);
         txtcityCountry = view.findViewById(R.id.txtCityCountry);
         txtcodePhone = view.findViewById(R.id.txtCodePhone);
@@ -170,20 +171,28 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
             @Override
             public void onClick(View v) {
 
-//                MainActivity.loading.setVisibility(View.VISIBLE);
-//                send_order(copun);
 
                 tinyDB.putString("finalAmount", txtfinaltotal.getText().toString());
                 tinyDB.putString("TxtTotal", txttotal.getText().toString());
                 tinyDB.putString("txtTaxesPrice", txttaxesprice.getText().toString());
                 tinyDB.putString("txtDiscountPrice", txtDiscountprice.getText().toString());
-                tinyDB.putString("copun",copun);
+                tinyDB.putString("copun", copun);
 
 
                 FragmentTransaction fr = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new Payment_Fragment());
                 fr.addToBackStack(null);
                 fr.commit();
+
+            }
+        });
+
+        btnbuycash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                MainActivity.loading.setVisibility(View.VISIBLE);
+                send_order(copun);
 
             }
         });

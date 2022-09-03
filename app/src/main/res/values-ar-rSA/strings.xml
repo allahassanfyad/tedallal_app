@@ -13,16 +13,12 @@
     <string name="user_name">اسم المستخدم</string>
     <string name="retrive_account_information">استعادة معلومات الحساب</string>
     <string name="retrive">إستعادة</string>
-    <string name="about_us1">تدلــل … كل ما تتمناه في لمسة واحده ....</string>
-    <string name="about_us2">ما هو ابلكيشن تدلـل…؟</string>
-    <string name="about_us3">ليه تدلـل…؟</string>
-    <string name="about_us_title1">بالنسبه لنا .. الامر ليس بمجرد توصيل طلبك فقط .. انما هو قناة اتصال تلبي احتياجاتك دائمآ ..</string>
-    <string name="about_us_title2">*الابلكيشن الاول والوحيد في الكويت الذي يقدم خدمة فريده ومميزة للعملاء وهي .. منها استرداد مبلغ 10% من قيمة مشترياتك علي كل طلب تقوم بطلبة من موقعنا من خلال برنامج كاش باك الذي يتم استرداد المبلغ النقدي تلقائيآ في محفظة العميل الرقميه بجانب العروض والخصومات الاخرى .
-*تدلـل…هو خدمة طلب الطعام والزهور والحلويات والكاكاو والصيدليات والجمعيات والعطور والملابس و اوت ليت كما يوجد العديد من الشركات التجارية الاخرى المشاركة …
-تدلــل في كل ماتريد طلبه اون لاين .....
-*هو اسرع واسهل طريقة تساعدك في الحصول علي طلبك من الاماكن القريبه من منطقتك وتختار ما تحتاجه حسب نوع الطلب الذي تريد طلبه .</string>
-    <string name="about_us_title3">*تدلـل هو تطبيق الكتروني تستمتع فيه كل يوم عند الطلب بالعروض والخصومات اليوميه المقدمة من مئآت الشركات والمطاعم والفاشن والعطور والزهور والجمعيات والصيدليات والاوت ليت والاقسام الاخري المشاركة معنا علي التطبيق …
-** اطلب من تدلـل تحصل علي احسن العروض والخدمات وسوف يتم استرداد 10% من قيمة مشترياتك في محفظتك مباشرة تستخدمها كما تشاء .</string>
+    <string name="about_us_title1">عن تطبيق تدلل…</string>
+    <string name="about_us_title2">تدلــل … كل ما تتمناه في لمسة واحده ....</string>
+    <string name="about_us_title3">ما هو ابلكيشن تدلـل…؟</string>
+    <string name="about_us1">بالنسبة لنا.. الامر ليس بمجرد توصيل طلبك فقط.. انما هو قناة اتصال تلبي احتياجاتك دائماً..</string>
+    <string name="about_us2">*الابليكيشن الأول والوحيد في الكويت الذي يقدم خدمات فريدة ومميزة للعملاء.. منها استرداد 10% من قيمة مشترياتك على كل طلب تقوم بطلبه من موقعنا من خلال برنامج كاش باك الذي يتم استرداد المبلغ النقدي تلقائياً في محفظة العميل الرقمية بجانب العروض والخصومات الأخرى. *تدلل… هي خدمة لطلب الطعام والزهور والحلويات والكاكاو والصيدليات والجمعيات والعطور والملابس كما يوجد العديد من الشركات التجارية الأخرى المشاركة فيها… تدلل في كل ما تريد طلبه اون لاين .... *هو أسرع وأسهل طريقة تساعدك في الحصول على طلبك من الأماكن القريبة من منطقتك وتختار ما تحتاجه حسب نوع الطلب الذي تريد طلبه.</string>
+    <string name="about_us3">تدلل هو تطبيق الكتروني تستمتع فيه كل يوم عند الطلب بالعروض والخصومات اليومية المقدمة من مئات الشركات والمطاعم والفاشن والعطور والزهور والجمعيات والصيدليات والأقسام الأخرى المشاركة معنا على التطبيق… *اطلب من تدلل تحصل على أحسن العروض والخدمات وسوف يتم استرداد 10% من قيمة مشترياتك في محفظتك مباشرة تستخدمها كما تشاء.</string>
     <string name="www_alshal_sa">www.tadallal.sa</string>
     <string name="saudi_arabia_jeddah_966_12_600000_ext_3101_info_alshal_sa">Saudi Arabia, Jeddah +966 12 600000 Ext 3101 info@tadallal.sa</string>
     <string name="about_app">عن التطبيق</string>
@@ -37,7 +33,7 @@
     <string name="country_">الدولة*</string>
     <string name="city_">المدينة*</string>
     <string name="neighborhood_name">إسم الحي*</string>
-    <string name="street_name">إسم الشارع*</string>
+    <string name="street_name">رقم الشارع*</string>
     <string name="postal_code">الرمز البريدي</string>
     <string name="phone_number">رقم الهاتف*</string>
     <string name="continue_">استمرار</string>
@@ -67,7 +63,7 @@
     <string name="quntity">الكمية:</string>
     <string name="change_language">تغيير اللغة</string>
     <string name="confirm">تأكيد</string>
-    <string name="delivery_address">عنوان الشحن</string>
+    <string name="delivery_address">عنوان التوصيل</string>
     <string name="payment_method">طريقة الدفع:</string>
     <string name="confirm_order">تأكيد الطلب</string>
     <string name="edit">تعديل</string>
@@ -253,4 +249,20 @@
     <string name="Color">اللون</string>\
     <string name="amount">القيمة:-</string>
     <string name="proceed_with_payment">المضي قدما في الدفع</string>
+    <string name="already_have_a_coupouncode">آسف ... لديك بالفعل رمز قسيمة قيد الاستخدام</string>
+
+    <string name="pay_with_visa">الدفع عن طريق الVisa</string>
+    <string name="pay_with_cash">الدفع نقدا</string>
+
+    <string name="area">المنطقة</string>
+    <string name="block">القطعة*</string>
+    <string name="building_number">رقم المنزل*</string>
+    <string name="apartment_number">رقم الشقة</string>
+    <string name="floor_number">رقم الدور</string>
+    <string name="type_of_delivery_place">نوع مكان التسليم*</string>
+    <string name="open">مفتوح</string>
+    <string name="close">مغلق</string>
+    <string name="extra_request">الطلبات الاضافية</string>
+    <string name="write_your_own_extra_request">اكتب الطلبات الاضافية الخاصة بك.....</string>
+    <string name="notifications">الاشعارات</string>
 </resources>

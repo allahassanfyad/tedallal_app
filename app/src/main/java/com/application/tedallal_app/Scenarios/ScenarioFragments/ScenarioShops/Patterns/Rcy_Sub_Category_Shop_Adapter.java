@@ -9,14 +9,11 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,13 +23,11 @@ import com.application.tedallal_app.NetworkLayer.Apicalls;
 import com.application.tedallal_app.NetworkLayer.NetworkInterface;
 import com.application.tedallal_app.NetworkLayer.ResponseModel;
 import com.application.tedallal_app.R;
-import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.Controller.Add_Cart_Fragment;
-import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Controller.Shop_Product_Fragment;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Models.ModelSubCategoryShopsResponse;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Models.Model_Shops;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.MainActivity;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Controller.UI_Home_Fragment.ScenarioHomeDetails.Model.ModelAllProductByCategoreyResponse;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Controller.UI_Home_Fragment.ScenarioHomeDetails.Model.ModelSubCategoryResponse;
-import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Controller.UI_Home_Fragment.ScenarioHomeDetails.Pattrens.Rcy_Home_Details_Adapter;
 import com.application.tedallal_app.Utils.TinyDB;
 import com.application.tedallal_app.local_data.saved_data;
 import com.bumptech.glide.Glide;
@@ -47,16 +42,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Rcy_Shops_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class Rcy_Sub_Category_Shop_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements NetworkInterface {
 
-    private List<Model_Shops> rcyHomelList;
+    private List<ModelSubCategoryShopsResponse> rcyHomelList;
+    ModelAllProductByCategoreyResponse[] homeDetailsResponses;
+    List<ModelAllProductByCategoreyResponse> homeDetailsList = new ArrayList<>();
     private Context context;
+    RecyclerView rcyhomedetails;
     private TinyDB tinyDB;
     private int selected_position = -1;
     private int lastPosition = -1;
+    Model_Shops[] model_shops;
 
-    public Rcy_Shops_Adapter(List<Model_Shops> rcypreviouslList, Context context) {
+    public Rcy_Sub_Category_Shop_Adapter(List<ModelSubCategoryShopsResponse> rcypreviouslList, Context context, RecyclerView rcyhomedetails) {
 
+        this.rcyhomedetails = rcyhomedetails;
         this.context = context;
         this.rcyHomelList = rcypreviouslList;
 
@@ -67,7 +67,7 @@ public class Rcy_Shops_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public ItemWasherServices onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View ads = LayoutInflater.from(parent.getContext()).inflate(R.layout.shops_item, parent, false);
+        View ads = LayoutInflater.from(parent.getContext()).inflate(R.layout.sub_category_item, parent, false);
         ItemWasherServices holder = new ItemWasherServices(ads);
         return holder;
     }
@@ -75,7 +75,7 @@ public class Rcy_Shops_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         int viewType = getItemViewType(position);
-        final Model_Shops songs = rcyHomelList.get(position);
+        final ModelSubCategoryShopsResponse songs = rcyHomelList.get(position);
 
         tinyDB = new TinyDB(context);
 
@@ -83,43 +83,15 @@ public class Rcy_Shops_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         // Here you apply the animation when the view is bound
         setAnimation(holder.itemView, position);
-        if (saved_data.get_lang_num(context).equals("ar")) {
 
-            itemHome.textservicesname.setText(songs.getName_company_ar());
+
+        if (saved_data.get_lang_num(Objects.requireNonNull(context)).equals("ar")) {
+
+            itemHome.textservicesname.setText(songs.getTitle_ar());
 
         } else if (saved_data.get_lang_num(context).equals("en")) {
 
-            itemHome.textservicesname.setText(songs.getNameCompany());
-
-        }
-
-
-        if (songs.getTypeShop().equals("Opening")) {
-
-            final int sdk = android.os.Build.VERSION.SDK_INT;
-
-            if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-
-                itemHome.relativeStatus.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.circle_background_green_small));
-
-            } else {
-
-                itemHome.relativeStatus.setBackground(ContextCompat.getDrawable(context, R.drawable.circle_background_green_small));
-            }
-
-
-        } else if (songs.getTypeShop().equals("Closed")) {
-
-            final int sdk = android.os.Build.VERSION.SDK_INT;
-
-            if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-
-                itemHome.relativeStatus.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.circle_background_gray_small));
-
-            } else {
-
-                itemHome.relativeStatus.setBackground(ContextCompat.getDrawable(context, R.drawable.circle_background_gray_small));
-            }
+            itemHome.textservicesname.setText(songs.getTitle_en());
 
         }
 
@@ -131,7 +103,7 @@ public class Rcy_Shops_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
 
         Glide.with(context)
-                .load(songs.getImg())
+                .load(songs.getImg_category())
                 .placeholder(R.drawable.holder_png)
                 .listener(new RequestListener<Drawable>() {
                     @Override
@@ -157,19 +129,15 @@ public class Rcy_Shops_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             @Override
             public void onClick(View v) {
 
-                tinyDB.putString("Id_Supplier", String.valueOf(songs.getId()));
 
-                tinyDB.putString("Type_Shop", String.valueOf(songs.getTypeShop()));
-                tinyDB.putString("Company_Name", String.valueOf(songs.getNameCompany()));
-                tinyDB.putString("Closing_Time", String.valueOf(songs.getClosingTime()));
-                tinyDB.putString("Opening_Time", String.valueOf(songs.getOpeningTime()));
-                tinyDB.putString("Shop_Logo", String.valueOf(songs.getImg()));
-                tinyDB.putString("cover_suppliers", String.valueOf(songs.getCover_suppliers()));
+//                tinyDB.putString("MyOrderID", String.valueOf(rcyHomelList.get(position).getId()));
+//                context.startActivity(new Intent(context, Order_Details.class));
 
-                FragmentTransaction fr = ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new Shop_Product_Fragment());
-                fr.addToBackStack(null);
-                fr.commit();
+                String subcategoryID = String.valueOf(songs.getId());
+                String id = saved_data.get_user_id(Objects.requireNonNull(context));
+                MainActivity.loading.setVisibility(View.VISIBLE);
+                new Apicalls(context, Rcy_Sub_Category_Shop_Adapter.this).selecte_product_of_category_shops(subcategoryID, id);
+
             }
         });
 
@@ -184,12 +152,76 @@ public class Rcy_Shops_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         return rcyHomelList.size();
     }
 
+    @Override
+    public void OnStart() {
+
+    }
+
+    @Override
+    public void OnResponse(ResponseModel model) {
+        MainActivity.loading.setVisibility(View.GONE);
+        Log.e("response", model.getResponse());
+        homeDetailsList.clear();
+
+        Gson gson = new Gson();
+        homeDetailsResponses = gson.fromJson(model.getResponse(), ModelAllProductByCategoreyResponse[].class);
+
+        for (int i = 0; i < homeDetailsResponses.length; i++) {
+
+            ModelAllProductByCategoreyResponse homeDetailsResponse = new ModelAllProductByCategoreyResponse();
+
+            homeDetailsResponse.setCategory(homeDetailsResponses[i].getCategory());
+            homeDetailsResponse.setDatee(homeDetailsResponses[i].getDatee());
+            homeDetailsResponse.setDes(homeDetailsResponses[i].getDes());
+            homeDetailsResponse.setDesEn(homeDetailsResponses[i].getDesEn());
+            homeDetailsResponse.setId(homeDetailsResponses[i].getId());
+            homeDetailsResponse.setImg1(homeDetailsResponses[i].getImg1());
+            homeDetailsResponse.setImg2(homeDetailsResponses[i].getImg2());
+            homeDetailsResponse.setImg3(homeDetailsResponses[i].getImg3());
+            homeDetailsResponse.setPrice(homeDetailsResponses[i].getPrice());
+            homeDetailsResponse.setIsfav(homeDetailsResponses[i].getIsfav());
+            homeDetailsResponse.setPriceDiscount(homeDetailsResponses[i].getPriceDiscount());
+            homeDetailsResponse.setRate(homeDetailsResponses[i].getRate());
+            homeDetailsResponse.setSlider(homeDetailsResponses[i].getSlider());
+            homeDetailsResponse.setTitle(homeDetailsResponses[i].getTitle());
+            homeDetailsResponse.setTitleEn(homeDetailsResponses[i].getTitleEn());
+            homeDetailsResponse.setNumberRate(homeDetailsResponses[i].getNumberRate());
+            homeDetailsResponse.setNumberStar(homeDetailsResponses[i].getNumberStar());
+
+            if (homeDetailsResponse.getIsfav().equals("yes")) {
+
+                homeDetailsResponse.setFavouret(true);
+
+            }
+
+            homeDetailsList.add(homeDetailsResponse);
+
+        }
+
+        rcyhomedetails.setHasFixedSize(true);
+        rcyhomedetails.setLayoutManager(new GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false));
+        rcyhomedetails.setAdapter(new Rcy_Shops_Product_Adapter(homeDetailsList, context));
+        DividerItemDecoration verticalDecoration = new DividerItemDecoration(rcyhomedetails.getContext(),
+                DividerItemDecoration.HORIZONTAL);
+        Drawable verticalDivider = ContextCompat.getDrawable(context, R.drawable.vertical_divider);
+        verticalDecoration.setDrawable(verticalDivider);
+        rcyhomedetails.addItemDecoration(verticalDecoration);
+
+    }
+
+
+    @Override
+    public void OnError(VolleyError error) {
+        MainActivity.loading.setVisibility(View.GONE);
+        Log.e("error", error.toString());
+    }
+
 
     public static class ItemWasherServices extends RecyclerView.ViewHolder {
 
         ImageView imgServices;
         TextView textservicesname, txtservicesPrice;
-        RelativeLayout relativeStatus;
+
         ShimmerFrameLayout container;
 
 
@@ -198,7 +230,6 @@ public class Rcy_Shops_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
             imgServices = itemView.findViewById(R.id.imgServices);
             textservicesname = itemView.findViewById(R.id.txtSubName);
-            relativeStatus = itemView.findViewById(R.id.relativeStatus);
 
             container = itemView.findViewById(R.id.shimmer_view_container);
             container.startShimmerAnimation();

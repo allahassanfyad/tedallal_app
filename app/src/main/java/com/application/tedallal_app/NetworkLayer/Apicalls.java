@@ -98,10 +98,10 @@ public class Apicalls {
      */
 
 
-    public void add_Address(final String name, final String country, final String city, final String area, final String street, final String posta, final String phone, final String id_user) {
+    public void add_Address(final String name, final String country, final String city, final String area, final String street, final String posta, final String phone, final String block, final String building, final String apartment, final String floor, final String type_of_delivery_place, final String id_user, final String avenve, final String location) {
 
 
-        apiRouter.performRequest(Apiclient.ADD_ADDRESS.getURL(), Apiclient.ADD_ADDRESS.getParams(), Arrays.asList(name, country, city, area, street, posta, phone, id_user), Request.Method.POST, Apiclient.ADD_ADDRESS.getCode());
+        apiRouter.performRequest(Apiclient.ADD_ADDRESS.getURL(), Apiclient.ADD_ADDRESS.getParams(), Arrays.asList(name, country, city, area, street, posta, phone, block, building, apartment, floor, type_of_delivery_place, id_user, avenve, location), Request.Method.POST, Apiclient.ADD_ADDRESS.getCode());
 
     }
 
@@ -218,9 +218,9 @@ public class Apicalls {
 //----------------------------------------------------------------------------------------------
 
 
-    public void get_All_Product_By_Shops(final String id_user,final String id_supplier) {
+    public void get_All_Product_By_Shops(final String id_user, final String id_supplier) {
 
-        apiRouter.performRequest(Apiclient.GET_ALL_PRODUCT_BY_SHOPS.getURL(), Apiclient.GET_ALL_PRODUCT_BY_SHOPS.getParams(), Arrays.asList(id_user,id_supplier), Request.Method.POST, Apiclient.GET_ALL_PRODUCT_BY_SHOPS.getCode());
+        apiRouter.performRequest(Apiclient.GET_ALL_PRODUCT_BY_SHOPS.getURL(), Apiclient.GET_ALL_PRODUCT_BY_SHOPS.getParams(), Arrays.asList(id_user, id_supplier), Request.Method.POST, Apiclient.GET_ALL_PRODUCT_BY_SHOPS.getCode());
 
     }
 
@@ -322,9 +322,9 @@ public class Apicalls {
     //----------------------------------------------------------------------------------------------
 
 
-    public void edit_Address(final String name, final String country, final String city, final String area, final String street, final String posta, final String phone, final String id_user, final String id_address) {
+    public void edit_Address(final String name, final String country, final String city, final String area, final String street, final String posta, final String phone, final String id_user, final String id_address, final String block, final String building, final String apartment, final String floor, final String avenve) {
 
-        apiRouter.performRequest(Apiclient.EDIT_ADDRESS.getURL(), Apiclient.EDIT_ADDRESS.getParams(), Arrays.asList(name, country, city, area, street, posta, phone, id_user, id_address), Request.Method.POST, Apiclient.EDIT_ADDRESS.getCode());
+        apiRouter.performRequest(Apiclient.EDIT_ADDRESS.getURL(), Apiclient.EDIT_ADDRESS.getParams(), Arrays.asList(name, country, city, area, street, posta, phone, id_user, id_address, block, building, apartment, floor, avenve), Request.Method.POST, Apiclient.EDIT_ADDRESS.getCode());
 
     }
 
@@ -571,6 +571,77 @@ public class Apicalls {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    //----------------------------------------------------------------------------------------------
+
+
+    public void get_All_Shops_By_Category(final String category) {
+
+        apiRouter.performRequest(Apiclient.SELECT_ALL_SHOPS_BY_CATEGORY.getURL(), Apiclient.SELECT_ALL_SHOPS_BY_CATEGORY.getParams(), Collections.singletonList(category), Request.Method.POST, Apiclient.SELECT_ALL_SHOPS_BY_CATEGORY.getCode());
+
+    }
+
+//----------------------------------------------------------------------------------------------
+
+
+    /**
+     * @func Main Activity Ads
+     */
+
+    public void get_All_Sub_Category_Shops(final String id_sub_category) {
+
+        apiRouter.performRequest(Apiclient.GET_ALL_SUB_CATEGORY_SHOPS.getURL(), Apiclient.GET_ALL_SUB_CATEGORY_SHOPS.getParams(), Arrays.asList(id_sub_category), Request.Method.POST, Apiclient.GET_ALL_SUB_CATEGORY_SHOPS.getCode());
+
+    }
+
+    //----------------------------------------------------------------------------------------------
+
+
+    /**
+     * @func Main Activity Ads
+     */
+
+    public void get_All_Category_Of_Shops(final String id_suppliers) {
+
+        apiRouter.performRequest(Apiclient.GET_ALL_CATEGORY_OF_SHOPS.getURL(), Apiclient.GET_ALL_CATEGORY_OF_SHOPS.getParams(), Collections.singletonList(id_suppliers), Request.Method.POST, Apiclient.GET_ALL_CATEGORY_OF_SHOPS.getCode());
+
+    }
+//----------------------------------------------------------------------------------------------
+
+
+    /**
+     * @func Main Activity Ads
+     */
+
+    public void selecte_product_of_category_shops(final String id_category_suppliers,final String user) {
+
+        apiRouter.performRequest(Apiclient.GET_ALL_PRODUCT_OF_CATEGORY_SHOP.getURL(), Apiclient.GET_ALL_PRODUCT_OF_CATEGORY_SHOP.getParams(), Arrays.asList(id_category_suppliers, user), Request.Method.POST, Apiclient.GET_ALL_SUB_CATEGORY_SHOPS.getCode());
+
+    }
+
+
+    //----------------------------------------------------------------------------------------------
+
+
+    /**
+     * @func Main Activity Ads
+     */
+
+    public void get_Extra_Requests(final String id_product) {
+
+        apiRouter.performRequest(Apiclient.GET_EXTRA_REQUESTS.getURL(), Apiclient.GET_EXTRA_REQUESTS.getParams(), Collections.singletonList(id_product), Request.Method.POST, Apiclient.GET_EXTRA_REQUESTS.getCode());
+
+    }
+
+
+    //----------------------------------------------------------------------------------------------
+
+
+    public void get_Shops_Home() {
+
+        apiRouter.performRequest(Apiclient.GET_SHOPS_Home.getURL(), Apiclient.GET_SHOPS_Home.getParams(), null, Request.Method.POST, Apiclient.GET_SHOPS_Home.getCode());
+
     }
 
 

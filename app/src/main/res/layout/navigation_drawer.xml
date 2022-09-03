@@ -216,7 +216,7 @@
                             android:paddingStart="@dimen/_5sdp"
                             android:fontFamily="@font/tajawal_medium"
                             android:paddingEnd="0dp"
-                            android:text="@string/terms_and_conditions"
+                            android:text="@string/notifications"
                             android:textColor="@color/colorw"
                             android:textSize="@dimen/_16sdp" />
 

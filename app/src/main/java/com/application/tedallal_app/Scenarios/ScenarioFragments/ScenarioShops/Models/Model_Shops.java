@@ -18,6 +18,8 @@ public class Model_Shops {
     private String address;
     @SerializedName("name_company")
     private String nameCompany;
+    @SerializedName("name_company_ar")
+    private String name_company_ar;
     @SerializedName("phone")
     private String phone;
     @SerializedName("email")
@@ -46,7 +48,25 @@ public class Model_Shops {
     private String closingTime;
     @SerializedName("opening_time")
     private String openingTime;
+    @SerializedName("cover_suppliers")
+    private String cover_suppliers;
 
+
+    public String getCover_suppliers() {
+        return cover_suppliers;
+    }
+
+    public void setCover_suppliers(String cover_suppliers) {
+        this.cover_suppliers = cover_suppliers;
+    }
+
+    public String getName_company_ar() {
+        return name_company_ar;
+    }
+
+    public void setName_company_ar(String name_company_ar) {
+        this.name_company_ar = name_company_ar;
+    }
 
     public int getId() {
         return id;

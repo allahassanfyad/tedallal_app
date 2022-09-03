@@ -18,7 +18,7 @@ public enum Apiclient {
     SELECT_ALL_PRODUCT("select_all_product", Collections.singletonList("id_user"), 3),
     FORGET_PASSWORD("forgete_password_by_email", Collections.singletonList("email"), 4),
     INSERT_FAV("insert_fav", Arrays.asList("id_user", "id_product"), 5),
-    ADD_ADDRESS("insert_address_user", Arrays.asList("name", "country", "city", "area", "street", "posta", "phone", "id_user"), 6),
+    ADD_ADDRESS("insert_address_user", Arrays.asList("name", "country", "city", "area", "street", "posta", "phone", "block", "building", "apartment", "floor", "type_of_delivery_place", "id_user", "avenve", "location"), 6),
     GET_ALL_ADDRESS("select_address", Collections.singletonList("id_user"), 7),
     ADD_PROMO("insert_copoun_code", Arrays.asList("code", "totle_price"), 8),
     Get_All_FAVOURITE("selecte_all_fav", Collections.singletonList("id_user"), 9),
@@ -33,7 +33,7 @@ public enum Apiclient {
     GET_HOME_SLIDER("select_slider", null, 18),
     SEARCH("search_product", Arrays.asList("id_user", "search_text", "lan"), 19),
     DELETE_ADDRESS("delete_address_user", Collections.singletonList("id_address"), 20),
-    EDIT_ADDRESS("update_address_user", Arrays.asList("name", "country", "city", "area", "street", "posta", "phone", "id_user", "id_address"), 21),
+    EDIT_ADDRESS("update_address_user", Arrays.asList("name", "country", "city", "area", "street", "posta", "phone", "id_user","id_address", "block", "building", "apartment", "floor", "avenve"), 21),
     GET_ALL_COUNTRIES("selecte_countries", null, 22),
     GET_BEST_SELLING("select_all_product_best_slides_saling", Collections.singletonList("id_user"), 23),
     GET_RECENTLY_ADDED("select_all_product_recently_added", Collections.singletonList("id_user"), 24),
@@ -56,8 +56,13 @@ public enum Apiclient {
     GET_TAXES_PRICE("select_taxes", null, 41),
     GET_ALL_PRODUCT_BY_OFFER("select_all_product_offer", Collections.singletonList("id_user"), 42),
     GET_ALL_SHOPS("selecte_all_shopes", null, 43),
-    GET_ALL_PRODUCT_BY_SHOPS("select_all_product_by_shops", Arrays.asList("id_user","id_supplier"), 44);
-
+    GET_ALL_PRODUCT_BY_SHOPS("select_all_product_by_shops", Arrays.asList("id_user", "id_supplier"), 44),
+    SELECT_ALL_SHOPS_BY_CATEGORY("selecte_shopes_by_category", Collections.singletonList("id_category_store"), 45),
+    GET_ALL_SUB_CATEGORY_SHOPS("selecte_shopes_by_sub_category", Collections.singletonList("id_sub_category"), 46),
+    GET_ALL_CATEGORY_OF_SHOPS("selecte_category_of_shopes", Collections.singletonList("id_suppliers"), 47),
+    GET_ALL_PRODUCT_OF_CATEGORY_SHOP("selecte_product_of_category_shops", Arrays.asList("id_category_suppliers", "user"), 48),
+    GET_EXTRA_REQUESTS("selecte_extra_request_shops", Collections.singletonList("id_product"), 49),
+    GET_SHOPS_Home("selecte_shops_of_home", null, 50);
 
     //--------------------------------------
 

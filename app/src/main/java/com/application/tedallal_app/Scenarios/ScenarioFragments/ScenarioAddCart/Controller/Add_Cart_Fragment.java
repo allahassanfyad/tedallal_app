@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,8 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.android.volley.VolleyError;
@@ -30,10 +33,12 @@ import com.application.tedallal_app.NetworkLayer.Apicalls;
 import com.application.tedallal_app.NetworkLayer.NetworkInterface;
 import com.application.tedallal_app.NetworkLayer.ResponseModel;
 import com.application.tedallal_app.R;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.Model.ModelExtraRequestResponse;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.Model.ModelProductDetailsResponse;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.Model.Model_Product_Color;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.Model.Model_Product_Sizes;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.Model.mode_introduction;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.Pattrens.Rcy_Extra_Request_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.Pattrens.Rcy_adapter;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAllSizes.Controller.All_Sizes_Fragment;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioCart.Controller.Cart_Fragment;
@@ -43,7 +48,9 @@ import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioOffers.P
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioOrders.Pattrens.Rcy_Order_Product_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Controller.Shop_Product_Fragment;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Controller.Shops_Fragment;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Models.ModelSubCategoryShopsResponse;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Patterns.Rcy_Shops_Product_Adapter;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Patterns.Rcy_Sub_Category_Shop_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.MainActivity;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioFavouriteFragment.Controller.Favourite_Fragment;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Controller.Home_Fragment;
@@ -83,6 +90,7 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
     ArrayAdapter<String> sizeAdapter;
     Spinner spinnersize;
     List<String> sizeList = new ArrayList<>();
+    List<String> pricesizeList = new ArrayList<>();
     String size = "";
 
     ArrayAdapter<String> colorAdapter;
@@ -91,18 +99,21 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
     String color = "";
 
     ArrayAdapter<String> quntityAdapter;
-    Spinner spinnerquntity;
+    //    Spinner spinnerquntity;
     List<String> quntityList = new ArrayList<>();
     String quntty = "";
 
     String Imagecart;
     String title, Id, price;
-
+    int num = 1;
+    LinearLayout txtincrease, txtdecrease;
+    EditText txtnumber, editExtraRequests;
 
     ModelProductDetailsResponse[] productDetailsResponses;
     Model_Product_Sizes[] product_sizes;
     Model_Product_Color[] product_colors;
-    List<ModelProductDetailsResponse> productDetailsList = new ArrayList<>();
+    ModelExtraRequestResponse[] extraRequestResponses;
+    List<ModelExtraRequestResponse> extaRequestList = new ArrayList<>();
 
     int currentPage = 0;
     int NUM_PAGES = 0;
@@ -112,6 +123,11 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
     ImageView imgFav;
     String productId;
     int x = 0;
+    public static double sizePrice = 0;
+    public static double sizeoldPrice = 0;
+    RecyclerView rcyExtraRequest;
+    RelativeLayout relativeDiscount;
+    public static List<String> extraRequests = new ArrayList<String>();
 
     @Nullable
     @Override
@@ -120,6 +136,8 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
 
         tinyDB = new TinyDB(getContext());
         linearindecator = view.findViewById(R.id.linearIndicator);
+        rcyExtraRequest = view.findViewById(R.id.rcyExtraRequest);
+        relativeDiscount = view.findViewById(R.id.relativeDiscount);
 
 //        title = tinyDB.getString("ProductTitle");
 //        Id = tinyDB.getString("ProductId");
@@ -131,7 +149,10 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
         txtdesc = view.findViewById(R.id.txtdesc);
         txtpriceDis = view.findViewById(R.id.txtPriceDiscount);
         txtprice = view.findViewById(R.id.txtPrice);
-
+        txtincrease = view.findViewById(R.id.txtIncrease);
+        txtdecrease = view.findViewById(R.id.txtDecrease);
+        txtnumber = view.findViewById(R.id.txtQuntity);
+        editExtraRequests = view.findViewById(R.id.editExtraRequests);
 
         spinnerColor = view.findViewById(R.id.spinnerColor);
 //        txtmaterial = view.findViewById(R.id.txtMaterial);
@@ -141,39 +162,39 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
 
         btnaddtocart = view.findViewById(R.id.btnAddToCart);
         spinnersize = (Spinner) view.findViewById(R.id.spinnerSize);
-        spinnerquntity = (Spinner) view.findViewById(R.id.spinnerQuntity);
+//        spinnerquntity = (Spinner) view.findViewById(R.id.spinnerQuntity);
 //        txtshowtable = view.findViewById(R.id.txtShowTable);
 //        txtcustomize = view.findViewById(R.id.txtCustomize);
         imgFav = view.findViewById(R.id.imgFav);
-
-
-        quntityList.add("1");
-        quntityList.add("2");
-        quntityList.add("3");
-        quntityList.add("4");
-        quntityList.add("5");
-        quntityList.add("6");
-
-
-        quntityAdapter = new ArrayAdapter<String>(getContext(), R.layout.spinner_text1, quntityList);
-        quntityAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown);
-        spinnerquntity.setAdapter(quntityAdapter);
-
-//        spinnercountry.setSelection(countryAdapter.getPosition("مصر"));
-
-        spinnerquntity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-
-                quntty = String.valueOf(quntityList.get(position));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Log.e("nothingSelected", "nothing");
-            }
-        });
+        quntty = txtnumber.getText().toString();
+//
+//        quntityList.add("1");
+//        quntityList.add("2");
+//        quntityList.add("3");
+//        quntityList.add("4");
+//        quntityList.add("5");
+//        quntityList.add("6");
+//
+//
+//        quntityAdapter = new ArrayAdapter<String>(getContext(), R.layout.spinner_text1, quntityList);
+//        quntityAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown);
+//        spinnerquntity.setAdapter(quntityAdapter);
+//
+////        spinnercountry.setSelection(countryAdapter.getPosition("مصر"));
+//
+//        spinnerquntity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//
+//
+//                quntty = String.valueOf(quntityList.get(position));
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//                Log.e("nothingSelected", "nothing");
+//            }
+//        });
 
         MainActivity.loading.setVisibility(View.VISIBLE);
         String product_id = tinyDB.getString("ProductId");
@@ -215,6 +236,114 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
 //            }
 //        });
 
+
+        txtincrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                int price = Integer.parseInt(songs.getTxtprice());
+//                int selectrd = num * price;
+//
+//                itemeCartHolder.txtprice.setText(""+selectrd);
+//                totalPrice1 = Integer.parseInt(price_details[position].getPrice());
+
+                num = Integer.parseInt(txtnumber.getText().toString());
+                num++;
+                if (num < 30) {
+                    txtnumber.setText("" + num);
+//                    itemeCartHolder.txtprice.setText("" + num * totalPrice1);
+
+                    quntty = txtnumber.getText().toString();
+
+                    double pricee = Double.parseDouble(price);
+                    double eextraRequest = Rcy_Extra_Request_Adapter.extrarequest;
+                    pricee = pricee + sizePrice + eextraRequest;
+
+//                    totalPrices();
+                    double priceincreace = pricee;
+
+                    double number = Double.parseDouble(txtnumber.getText().toString());
+
+                    double totalpricebefortax = priceincreace * number;
+
+                    txtprice.setText("" + totalpricebefortax);
+
+//                    MainActivity mainActivity = new MainActivity();
+//                    mainActivity.setcartcount();
+
+                } else if (num > 30) {
+                    num = 30;
+                    txtnumber.setText("" + num);
+                    quntty = txtnumber.getText().toString();
+
+                    double pricee = Double.parseDouble(price);
+                    double eextraRequest = Rcy_Extra_Request_Adapter.extrarequest;
+                    pricee = pricee + sizePrice + eextraRequest;
+
+                    double priceincreace = pricee;
+
+                    double number = Double.parseDouble(txtnumber.getText().toString());
+
+                    double totalpricebefortax = priceincreace * number;
+
+                    txtprice.setText("" + totalpricebefortax);
+
+//                    MainActivity mainActivity = new MainActivity();
+//                    mainActivity.setcartcount();
+
+                }
+
+            }
+        });
+
+        txtdecrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                num = Integer.parseInt(txtnumber.getText().toString());
+                num--;
+                if (num >= 1) {
+                    txtnumber.setText("" + num);
+                    quntty = txtnumber.getText().toString();
+
+                    double pricee = Double.parseDouble(price);
+                    double eextraRequest = Rcy_Extra_Request_Adapter.extrarequest;
+                    pricee = pricee + sizePrice + eextraRequest;
+
+                    double pricedecrease = pricee;
+
+                    double number = Double.parseDouble(txtnumber.getText().toString());
+
+                    double totalpricebefortax = pricedecrease * number;
+
+                    txtprice.setText("" + totalpricebefortax);
+//                    MainActivity mainActivity = new MainActivity();
+//                    mainActivity.setcartcount();
+
+                } else if (num <= 0) {
+                    num = 1;
+                    txtnumber.setText("" + num);
+                    quntty = txtnumber.getText().toString();
+
+                    double pricee = Double.parseDouble(price);
+                    double eextraRequest = Rcy_Extra_Request_Adapter.extrarequest;
+                    pricee = pricee + sizePrice + eextraRequest;
+
+                    double pricedecrease = pricee;
+
+                    double number = Double.parseDouble(txtnumber.getText().toString());
+
+                    double totalpricebefortax = pricedecrease * number;
+
+                    txtprice.setText("" + totalpricebefortax);
+//                    MainActivity mainActivity = new MainActivity();
+//                    mainActivity.setcartcount();
+                }
+
+            }
+        });
+
+
         btnaddtocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -228,18 +357,57 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
 
 
                     Rcy_Cart_Model c = new Rcy_Cart_Model();
+                    String exxtra = "";
+                    int y = 0;
 
+                    for (int i = 0; i < extraRequests.size(); i++) {
+
+                        if (y == 0) {
+
+                            y = 1;
+                            exxtra = extraRequests.get(i);
+
+                        } else {
+
+                            exxtra = exxtra + " " + "/" + " " + extraRequests.get(i);
+
+                        }
+
+
+                    }
+                    if (!editExtraRequests.getText().toString().equals("")) {
+
+                        if (extraRequests.size() != 0) {
+
+                            exxtra = exxtra + " " + "/" + " " + editExtraRequests.getText().toString();
+
+                        } else {
+
+                            exxtra = editExtraRequests.getText().toString();
+
+                        }
+
+                    }
+
+
+                    double priice = Double.parseDouble(price);
+                    priice = priice + sizePrice + Rcy_Extra_Request_Adapter.extrarequest;
+                    String pricce = "" + priice;
 
                     c.setProductid(Id);
                     c.setTxttitle(title);
-                    c.setTxtprice(price);
+                    c.setTxtprice(pricce);
                     c.setTxtColor(color);
                     c.setTxtnumberchoose(quntty);
                     c.setImghome(Imagecart);
                     c.setTxtsize(size);
+                    c.setExtraRequest(exxtra);
 
                     Realm_adapter adapter = new Realm_adapter(realm);
                     adapter.save(c);
+
+                    Log.e("EEXXT", exxtra);
+                    extraRequests.clear();
 
                     Toasty.success(Objects.requireNonNull(getContext()), R.string.your_request_addeed_to_cart_successfully, Toast.LENGTH_LONG).show();
 
@@ -486,6 +654,7 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
                     price = productDetailsResponses[0].getPrice();
                     price = productDetailsResponses[0].getPrice();
 
+
                     tinyDB.putString("ProductTitle", productDetailsResponses[0].getTitle());
                     tinyDB.putString("ProductId", String.valueOf(productDetailsResponses[0].getId()));
                     tinyDB.putString("ProductPrice", productDetailsResponses[0].getPrice());
@@ -522,7 +691,17 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
                 } else if (saved_data.get_lang_num(getContext()).equals("en")) {
                     txtdesc.setText(productDetailsResponses[0].getDesEn());
                 }
-                txtpriceDis.setText(productDetailsResponses[0].getPriceDiscount());
+
+                if (productDetailsResponses[0].getPriceDiscount().equals("0")) {
+
+                    relativeDiscount.setVisibility(View.GONE);
+
+                } else {
+                    relativeDiscount.setVisibility(View.VISIBLE);
+                    txtpriceDis.setText(productDetailsResponses[0].getPriceDiscount());
+
+                }
+
 
                 productId = String.valueOf(productDetailsResponses[0].getId());
 
@@ -609,10 +788,12 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
                     size.setSizesEn(product_sizes[i].getSizesEn());
                     size.setIdAdmin(product_sizes[i].getIdAdmin());
                     size.setIdProduct(product_sizes[i].getIdProduct());
+                    size.setSize_price(product_sizes[i].getSize_price());
 //
 
                     Log.e("product_size", product_sizes[i].getSizesEn().toString());
                     sizeList.add(product_sizes[i].getSizesAr());
+                    pricesizeList.add(product_sizes[i].getSize_price());
 
                 }
 
@@ -630,6 +811,36 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
 
 
                     size = String.valueOf(sizeList.get(position));
+                    sizePrice = Double.parseDouble(pricesizeList.get(position));
+                    Log.e("price", String.valueOf(sizePrice));
+
+                    calc_Price(price, txtnumber, txtprice, sizePrice);
+
+//                    if (sizeoldPrice == 0) {
+//
+//                        String pricesizeee = txtprice.getText().toString();
+//                        double priceaddsize = Double.parseDouble(pricesizeee);
+//
+//                        double dsizeprice = sizePrice;
+//
+//                        double totalpriceafteraddsize = priceaddsize + dsizeprice;
+//
+//                        txtprice.setText("" + totalpriceafteraddsize);
+//                    } else {
+//
+//                        String pricesizeee = txtprice.getText().toString();
+//                        double priceaddsize = Double.parseDouble(pricesizeee);
+//                        priceaddsize = priceaddsize - sizeoldPrice;
+//                        double dsizeprice = sizePrice;
+//
+//                        double eextraRequest = Rcy_Extra_Request_Adapter.extrarequest;
+//                        double totalpriceafteraddsize = priceaddsize + dsizeprice + eextraRequest;
+//
+//                        txtprice.setText("" + totalpriceafteraddsize);
+//
+//                    }
+//                    sizeoldPrice = Integer.parseInt(pricesizeList.get(position));
+                    Log.e("oldprice", "" + sizeoldPrice);
                 }
 
                 @Override
@@ -644,7 +855,7 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
             new Apicalls(getContext(), Add_Cart_Fragment.this).get_Product_Color(product_id);
 
         } else if (x == 4) {
-            MainActivity.loading.setVisibility(View.GONE);
+
 
             Log.e("response22", model.getResponse().toString());
 
@@ -693,6 +904,39 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
                 }
             });
 
+            String product_id = tinyDB.getString("ProductId");
+            x = 5;
+            new Apicalls(getContext(), Add_Cart_Fragment.this).get_Extra_Requests(product_id);
+
+
+        } else if (x == 5) {
+
+            MainActivity.loading.setVisibility(View.GONE);
+
+
+            Gson gson = new Gson();
+            extraRequestResponses = gson.fromJson(model.getResponse(), ModelExtraRequestResponse[].class);
+
+            for (int i = 0; i < extraRequestResponses.length; i++) {
+
+                ModelExtraRequestResponse extraResponse = new ModelExtraRequestResponse();
+
+                extraResponse.setId(extraRequestResponses[i].getId());
+                extraResponse.setId_admin(extraRequestResponses[i].getId_admin());
+                extraResponse.setTitle_ar(extraRequestResponses[i].getTitle_ar());
+                extraResponse.setTitle_en(extraRequestResponses[i].getTitle_en());
+                extraResponse.setId_product(extraRequestResponses[i].getId_product());
+                extraResponse.setDatee(extraRequestResponses[i].getDatee());
+                extraResponse.setProduct_price(extraRequestResponses[i].getProduct_price());
+
+
+                extaRequestList.add(extraResponse);
+            }
+
+            rcyExtraRequest.setHasFixedSize(true);
+            rcyExtraRequest.setLayoutManager(new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false));
+            rcyExtraRequest.setAdapter(new Rcy_Extra_Request_Adapter(extaRequestList, getActivity(), txtprice, price, txtnumber));
+
         }
 
 
@@ -726,5 +970,20 @@ public class Add_Cart_Fragment extends Fragment implements IFOnBackPressed, Netw
         super.onDestroy();
         timer.cancel();
 
+    }
+
+    public void calc_Price(String price, TextView txtnumber, TextView txtprice, double sizePrice) {
+
+        double pricee = Double.parseDouble(price);
+        double eextraRequest = Rcy_Extra_Request_Adapter.extrarequest;
+        pricee = pricee + sizePrice + eextraRequest;
+        double priceincreace = pricee;
+
+        double number = Double.parseDouble(txtnumber.getText().toString());
+
+        double totalpricebefortax = priceincreace * number;
+        Log.e("extraArray", extraRequests.toString());
+
+        txtprice.setText("" + totalpricebefortax);
     }
 }

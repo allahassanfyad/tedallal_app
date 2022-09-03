@@ -69,12 +69,13 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
 
     String copun = "none";
     int delivary = 0;
-    int taxes = 0;
-    int discount = 0;
+    double taxes = 0;
+    double discount = 0;
     public static int editaddress = 0;
 
     int x = 0;
     int d = 0;
+    int l = 0;
 
     @Nullable
     @Override
@@ -137,24 +138,32 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
             @Override
             public void onClick(View v) {
 
-                if (editpromo.getText().toString().equals("")) {
+                if (l == 1) {
 
+                    Toasty.error(Objects.requireNonNull(getContext()), R.string.already_have_a_coupouncode, Toast.LENGTH_LONG).show();
 
-                    editpromo.setError(getString(R.string.please_enter_copoun_code));
-
-                    YoYo.with(Techniques.Shake)
-                            .duration(700)
-                            .repeat(1)
-                            .playOn(view.findViewById(R.id.editPromoCode));
 
                 } else {
+                    if (editpromo.getText().toString().equals("")) {
 
 
-                    x = 1;
+                        editpromo.setError(getString(R.string.please_enter_copoun_code));
 
-                    MainActivity.loading.setVisibility(View.VISIBLE);
-                    new Apicalls(getContext(), Confirm_Order_Fragment.this).add_Promo_Code(editpromo.getText().toString(), txtfinaltotal.getText().toString());
+                        YoYo.with(Techniques.Shake)
+                                .duration(700)
+                                .repeat(1)
+                                .playOn(view.findViewById(R.id.editPromoCode));
 
+                    } else {
+
+
+                        x = 1;
+
+                        MainActivity.loading.setVisibility(View.VISIBLE);
+                        new Apicalls(getContext(), Confirm_Order_Fragment.this).add_Promo_Code(editpromo.getText().toString(), txtfinaltotal.getText().toString());
+
+
+                    }
 
                 }
 
@@ -237,6 +246,7 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
             String totalAfterDisc = model.getResponse();
 
             d = 1;
+            l = 1;
             txtfinaltotal.setText(totalAfterDisc);
             totalPrices(txttotal, txtfinaltotal);
 
@@ -251,8 +261,9 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
         } else if (x == 3) {
             MainActivity.loading.setVisibility(View.GONE);
 
-            taxes = Integer.parseInt(model.getResponse());
-            txttaxesprice.setText(model.getResponse().toString());
+            taxes = Double.parseDouble(model.getResponse());
+            taxes = taxes / 100;
+
             totalPrices(txttotal, txtfinaltotal);
         }
 
@@ -274,19 +285,19 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
         cart_models = adapter.retrieve();
         int toatalprice = 0;
         for (int x = 0; x < adapter.retrieve().size(); x++) {
-            int pricedecrease = 0;
+            double pricedecrease = 0;
             if (cart_models.get(x).getTxtprice().equals("") || cart_models.get(x).getTxtprice() == null) {
 
                 pricedecrease = 10;
 
             } else {
 
-                pricedecrease = Integer.parseInt(cart_models.get(x).getTxtprice());
+                pricedecrease = Double.parseDouble(cart_models.get(x).getTxtprice());
 
             }
             int number = Integer.parseInt(cart_models.get(x).getTxtnumberchoose());
 
-            int totalpricebefortax = pricedecrease * number;
+            double totalpricebefortax = pricedecrease * number;
 
             toatalprice += totalpricebefortax;
 
@@ -294,17 +305,22 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
         textotal.setText("" + toatalprice);
 
         delivary = Integer.parseInt(txtdeliveryprice.getText().toString());
-        taxes = Integer.parseInt(txttaxesprice.getText().toString());
 
-        int totalPrices = toatalprice + delivary + taxes;
+
+        double taxxxxes = toatalprice * taxes;
+
+        txttaxesprice.setText("" + taxxxxes);
+
+        double totalPrices = toatalprice + delivary + taxxxxes;
 
         if (d == 1) {
             d = 0;
 
             relativeDiscount.setVisibility(View.VISIBLE);
-            int finalprice = Integer.parseInt(txtfinaltotal.getText().toString());
-            discount = totalPrices - finalprice;
-            txtDiscountprice.setText("" + discount);
+            double finalprice = Double.parseDouble(txtfinaltotal.getText().toString());
+            discount = finalprice - totalPrices;
+
+            txtDiscountprice.setText("" + String.format("%.2f", discount));
 
 
         } else {
@@ -330,7 +346,7 @@ public class Confirm_Order_Fragment extends Fragment implements IFOnBackPressed,
 
         StringBuilder url =
                 new StringBuilder("http://tadallal.com/store_app.asmx/insert_orders?id_user=" +
-                        id + "&address=" + address + "&totle_price=" + txttotal.getText().toString() + "&final_totle_price=" + txtfinaltotal.getText().toString() + "&taxes=" + txttaxesprice.getText().toString() + "&discount=" + txtDiscountprice.getText().toString() + "&typepay=" + "cash" + "&copon_code=" + copun);
+                        id + "&address=" + address + "&totle_price=" + txttotal.getText().toString() + "&final_totle_price=" + txtfinaltotal.getText().toString() + "&taxes=" + txttaxesprice.getText().toString() + "&discount=" + discount + "&typepay=" + "cash" + "&copon_code=" + copun);
 
 
         Log.i("functionVolly: ", id + "/" + address + "/" + txttotal.getText().toString() + "/" +

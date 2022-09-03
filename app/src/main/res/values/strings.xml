@@ -12,16 +12,15 @@
     <string name="user_name">User Name</string>
     <string name="retrive_account_information">Retrieve Your Account</string>
     <string name="retrive">Retrieve</string>
-    <string name="about_us1">FOR US, IT IS NOT JUST ABOUT DELIVERING YOUR ORDER, BUT IT IS ACOMMUNICATION CHANNEL THAT ALWAYS MEETS YOUR NEEDS .</string>
-    <string name="about_us2">* The first and only application in Kuwait that provides a unique and distinctive service to customers, including a refund of 10% of the value of your purchases on each order you order from our website through the cashback program, which is automatically refunded to the customer’s digital wallet, in addition to other offers and discounts.
-*Tadallal … is the service of ordering food, flowers, sweets, cocoa, pharmacies, associations, perfumes, clothes and out lit, as there are many other participating commercial companies…
-tadallal everything you want to order online…..
-* It is the fastest and easiest way to help you get your order from places near your area and choose what you need according to the type of order you want to order</string>
-    <string name="about_us3">*Tadallal is an electronic application in which you enjoy every day, upon request, the daily offers and discounts offered by thousands of companies, restaurants, fashion, perfumes, flowers, associations, pharmacies, Outlet and other sections that participate with us on the application …
-** Ask from Tadallal to get the best offers and services, and 10% of your purchases will be refunded directly to your wallet. You can use it as you wish.</string>
-    <string name="about_us_title1">ALL YOU WANT BY ONE CLICK</string>
-    <string name="about_us_title2">WHAT IS APPLICATION tadallal…?</string>
-    <string name="about_us_title3">WHY tadallal…?</string>
+    <string name="about_us1">For us… It is not just about delivering your order… It is a communication channel that always meet your needs…</string>
+    <string name="about_us2">*The first and only application in Kuwait that provides a unique and distinctive services to customers… including a refund of 10% from the value of your purchases on each order you requested from our application through cashback program which will be automatically refunded to the customer’s digital wallet, in addition to that there will be other offers and discounts.
+*Tadallal… is a service of ordering food, flowers, sweets, chocolate, pharmacies, associations, perfumes, clothes, as there are many other participating commercial companies… Tadallal in every single thing you want while ordering online…
+*It is one of the fastest and easiest ways that will help you in getting your order from places that is near to your area, and choosing what you need according to the type of the order that you want.</string>
+    <string name="about_us3">*Tadallal is an electronic application in which you enjoy every day, upon requests, the daily offers and discounts offered by hundreds of companies, restaurants, fashion, perfumes, flowers, associations, pharmacies and other departments participating with us on the application…
+**Order from Tadallal and get the best offers, services, as well as 10% of the value of your purchases will be refunded directly to your wallet. You can use it as you wish.</string>
+    <string name="about_us_title1">About Tadallal Application</string>
+    <string name="about_us_title2">Tadallal… everything you desire in one touch</string>
+    <string name="about_us_title3">What is Tadallal application…?</string>
     <string name="www_alshal_sa">www.tadallal.sa</string>
     <string name="saudi_arabia_jeddah_966_12_600000_ext_3101_info_alshal_sa">Saudi Arabia, Jeddah +966 12 600000 Ext 3101 info@tadallal.sa</string>
     <string name="about_app">About App</string>
@@ -36,7 +35,7 @@ tadallal everything you want to order online…..
     <string name="country_">Country*</string>
     <string name="city_">City*</string>
     <string name="neighborhood_name">Neighborhood name*</string>
-    <string name="street_name">Street Name*</string>
+    <string name="street_name">Street number*</string>
     <string name="postal_code">Postal number</string>
     <string name="phone_number">Phone number*</string>
     <string name="continue_">Continue</string>
@@ -234,4 +233,16 @@ These conditions are in effect for the user who is in any of the European Union 
     <string name="proceed_with_payment">Proceed with payment</string>
     <string name="pay_with_visa">Pay With Visa</string>
     <string name="pay_with_cash">Pay With Cash</string>
+    <string name="already_have_a_coupouncode">sorry... you already have a coupon code in use</string>
+    <string name="area">Area</string>
+    <string name="block">Block*</string>
+    <string name="building_number">Home Number*</string>
+    <string name="apartment_number">Apartment Number</string>
+    <string name="floor_number">Floor Number</string>
+    <string name="type_of_delivery_place">Type Of Delivery Place*</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="extra_request">Extra Request</string>
+    <string name="write_your_own_extra_request">Write your own extra request.....</string>
+    <string name="notifications">Notifications</string>
 </resources>

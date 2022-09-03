@@ -19,6 +19,17 @@ public class Model_Product_Sizes {
     private String datee;
     @SerializedName("id_admin")
     private String idAdmin;
+    @SerializedName("size_price")
+    private String size_price;
+
+
+    public String getSize_price() {
+        return size_price;
+    }
+
+    public void setSize_price(String size_price) {
+        this.size_price = size_price;
+    }
 
     public int getId() {
         return id;
@@ -84,6 +95,7 @@ public class Model_Product_Sizes {
             jsonObject.put("sizesAr", sizesAr);
             jsonObject.put("datee", datee);
             jsonObject.put("idAdmin", idAdmin);
+            jsonObject.put("size_price", size_price);
 
         } catch (JSONException e) {
             // TODO Auto-generated catch block

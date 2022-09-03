@@ -31,10 +31,10 @@
                     <com.application.tedallal_app.Utils.TextViewWithFontExtraBold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/tajawal_extrabold"
+                        android:fontFamily="@font/tajawal_bold"
                         android:text="@string/about_app"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="20sp" />
+                        android:textColor="@color/colorb"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -64,8 +64,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="38dp"
-                    android:layout_marginEnd="38dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginEnd="38dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -73,7 +73,7 @@
                     <com.application.tedallal_app.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/tajawal_regular"
+                        android:fontFamily="@font/tajawal_bold"
                         android:lineSpacingMultiplier="1.2"
                         android:text="@string/about_us1"
                         android:textColor="@color/colorb"
@@ -86,8 +86,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="38dp"
-                    android:layout_marginEnd="38dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="38dp"
                     android:gravity="start"
                     android:orientation="vertical">
 
@@ -116,7 +116,7 @@
                     <com.application.tedallal_app.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/tajawal_regular"
+                        android:fontFamily="@font/tajawal_bold"
                         android:lineSpacingMultiplier="1.2"
                         android:text="@string/about_us2"
                         android:textColor="@color/colorb"
@@ -125,13 +125,13 @@
                 </LinearLayout>
 
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="38dp"
-                    android:layout_marginEnd="38dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="38dp"
+                    android:layout_marginBottom="20dp"
                     android:gravity="start"
                     android:orientation="vertical">
 
@@ -147,13 +147,12 @@
 
                 </LinearLayout>
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="38dp"
                     android:layout_marginEnd="38dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -161,7 +160,7 @@
                     <com.application.tedallal_app.Utils.TextViewWithFont
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/tajawal_regular"
+                        android:fontFamily="@font/tajawal_bold"
                         android:lineSpacingMultiplier="1.2"
                         android:text="@string/about_us3"
                         android:textColor="@color/colorb"
@@ -170,44 +169,44 @@
                 </LinearLayout>
 
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="24dp"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="vertical">-->
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="24dp"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:orientation="vertical">-->
 
 
-<!--                    <com.application.tedallal_app.Utils.TextViewWithFontMedium-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:fontFamily="@font/tajawal_medium"-->
-<!--                        android:text="@string/www_alshal_sa"-->
-<!--                        android:textColor="@color/colorPurble"-->
-<!--                        android:textSize="19sp" />-->
+                <!--                    <com.application.tedallal_app.Utils.TextViewWithFontMedium-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:fontFamily="@font/tajawal_medium"-->
+                <!--                        android:text="@string/www_alshal_sa"-->
+                <!--                        android:textColor="@color/colorPurble"-->
+                <!--                        android:textSize="19sp" />-->
 
-<!--                </LinearLayout>-->
-
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="212dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center_horizontal"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="vertical">-->
+                <!--                </LinearLayout>-->
 
 
-<!--                    <com.application.tedallal_app.Utils.TextViewWithFontMedium-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:fontFamily="@font/tajawal_medium"-->
-<!--                        android:gravity="center"-->
-<!--                        android:text="@string/saudi_arabia_jeddah_966_12_600000_ext_3101_info_alshal_sa"-->
-<!--                        android:textColor="@color/colorb"-->
-<!--                        android:textSize="19sp" />-->
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="212dp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_gravity="center_horizontal"-->
+                <!--                    android:layout_marginTop="10dp"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:orientation="vertical">-->
 
-<!--                </LinearLayout>-->
+
+                <!--                    <com.application.tedallal_app.Utils.TextViewWithFontMedium-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:fontFamily="@font/tajawal_medium"-->
+                <!--                        android:gravity="center"-->
+                <!--                        android:text="@string/saudi_arabia_jeddah_966_12_600000_ext_3101_info_alshal_sa"-->
+                <!--                        android:textColor="@color/colorb"-->
+                <!--                        android:textSize="19sp" />-->
+
+                <!--                </LinearLayout>-->
 
 
             </LinearLayout>

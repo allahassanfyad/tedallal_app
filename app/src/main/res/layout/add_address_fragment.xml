@@ -70,13 +70,111 @@
                         android:textColor="@color/colorb"
                         android:textSize="14sp" />
 
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/area"
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
 
+                    <EditText
+                        android:id="@+id/editArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="31dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="9dp"
+                        android:background="@drawable/strok"
+                        android:fontFamily="@font/tajawal_regular"
+                        android:gravity="start|center_vertical"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorb"
+                        android:textSize="14sp" />
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/block"
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="31dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="9dp"
+                        android:background="@drawable/strok"
+                        android:fontFamily="@font/tajawal_regular"
+                        android:gravity="start|center_vertical"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorb"
+                        android:textSize="14sp" />
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/street_name"
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editStreat"
+                        android:layout_width="match_parent"
+                        android:layout_height="31dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="9dp"
+                        android:background="@drawable/strok"
+                        android:fontFamily="@font/tajawal_regular"
+                        android:gravity="start|center_vertical"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorb"
+                        android:textSize="14sp" />
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/building_number"
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editBuildingNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="31dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="9dp"
+                        android:background="@drawable/strok"
+                        android:fontFamily="@font/tajawal_regular"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorb"
+                        android:textSize="14sp" />
 
                     <com.application.tedallal_app.Utils.TextViewWithFontMedium
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/tajawal_medium"
                         android:text="@string/country_"
+                        android:visibility="gone"
                         android:textColor="@color/colorb"
                         android:textSize="16sp" />
 
@@ -85,6 +183,8 @@
                         android:layout_height="31dp"
                         android:layout_marginTop="2dp"
                         android:layout_marginBottom="9dp"
+                        android:visibility="gone"
+
                         android:background="@drawable/strok"
                         android:orientation="horizontal">
 
@@ -117,6 +217,7 @@
                         android:fontFamily="@font/tajawal_medium"
                         android:text="@string/city_"
                         android:textColor="@color/colorb"
+                        android:visibility="gone"
                         android:textSize="16sp" />
 
                     <EditText
@@ -126,31 +227,7 @@
                         android:layout_marginTop="2dp"
                         android:layout_marginBottom="9dp"
                         android:background="@drawable/strok"
-                        android:fontFamily="@font/tajawal_regular"
-                        android:gravity="start|center_vertical"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp"
-                        android:singleLine="true"
-                        android:textColor="@color/colorb"
-                        android:textSize="14sp" />
-
-                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/tajawal_medium"
-                        android:text="@string/neighborhood_name"
-                        android:textColor="@color/colorb"
-                        android:textSize="16sp" />
-
-                    <EditText
-                        android:id="@+id/editNabour"
-                        android:layout_width="match_parent"
-                        android:layout_height="31dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginBottom="9dp"
-                        android:background="@drawable/strok"
+                        android:visibility="gone"
                         android:fontFamily="@font/tajawal_regular"
                         android:gravity="start|center_vertical"
                         android:inputType="text"
@@ -162,55 +239,8 @@
                         android:textSize="14sp" />
 
 
-                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/tajawal_medium"
-                        android:text="@string/street_name"
-                        android:textColor="@color/colorb"
-                        android:textSize="16sp" />
 
-                    <EditText
-                        android:id="@+id/editStreat"
-                        android:layout_width="match_parent"
-                        android:layout_height="31dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginBottom="9dp"
-                        android:background="@drawable/strok"
-                        android:fontFamily="@font/tajawal_regular"
-                        android:gravity="start|center_vertical"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp"
-                        android:singleLine="true"
-                        android:textColor="@color/colorb"
-                        android:textSize="14sp" />
 
-                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/tajawal_medium"
-                        android:text="@string/postal_code"
-                        android:textColor="@color/colorb"
-                        android:textSize="16sp" />
-
-                    <EditText
-                        android:id="@+id/editPostNumber"
-                        android:layout_width="match_parent"
-                        android:layout_height="31dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginBottom="9dp"
-                        android:background="@drawable/strok"
-                        android:fontFamily="@font/tajawal_regular"
-                        android:gravity="start|center_vertical"
-                        android:inputType="number"
-                        android:maxLines="1"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp"
-                        android:singleLine="true"
-                        android:textColor="@color/colorb"
-                        android:textSize="14sp" />
 
 
 
@@ -226,19 +256,18 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="2dp"
-                        android:layout_marginBottom="18dp"
+                        android:layout_marginBottom="9dp"
+                        android:orientation="horizontal"
                         android:weightSum="1">
 
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
+                            android:layout_marginEnd="8dp"
                             android:layout_weight=".8"
-                            android:layout_marginEnd="8dp">
-
+                            android:orientation="vertical">
 
 
                             <EditText
@@ -261,15 +290,12 @@
                         </LinearLayout>
 
 
-
-
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
+                            android:layout_marginStart="8dp"
                             android:layout_weight=".2"
-                            android:layout_marginStart="8dp">
-
+                            android:orientation="vertical">
 
 
                             <EditText
@@ -278,14 +304,14 @@
                                 android:layout_height="31dp"
                                 android:layout_marginTop="2dp"
                                 android:background="@drawable/strok"
+                                android:clickable="false"
+                                android:enabled="false"
                                 android:fontFamily="@font/tajawal_regular"
                                 android:gravity="center"
                                 android:inputType="number"
                                 android:maxLines="1"
-                                android:enabled="false"
-                                android:clickable="false"
-                                android:text="@string/_966"
                                 android:singleLine="true"
+                                android:text="@string/_966"
                                 android:textColor="@color/colorb"
                                 android:textSize="14sp" />
 
@@ -294,16 +320,127 @@
                     </LinearLayout>
 
 
+
+
+
+
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/apartment_number"
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editApartmentNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="31dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="9dp"
+                        android:background="@drawable/strok"
+                        android:fontFamily="@font/tajawal_regular"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorb"
+                        android:textSize="14sp" />
+
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/floor_number"
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editFloorNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="31dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="9dp"
+                        android:background="@drawable/strok"
+                        android:fontFamily="@font/tajawal_regular"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorb"
+                        android:textSize="14sp" />
+
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/type_of_delivery_place"
+                        android:visibility="gone"
+
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editTypeOfDeliveryPlace"
+                        android:layout_width="match_parent"
+                        android:layout_height="31dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="9dp"
+                        android:background="@drawable/strok"
+                        android:visibility="gone"
+
+                        android:fontFamily="@font/tajawal_regular"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorb"
+                        android:textSize="14sp" />
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="Avenve"
+                        android:visibility="gone"
+
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editAvenve"
+                        android:layout_width="match_parent"
+                        android:layout_height="31dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="18dp"
+                        android:background="@drawable/strok"
+                        android:fontFamily="@font/tajawal_regular"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:visibility="gone"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorb"
+                        android:textSize="14sp" />
+
+
                     <Button
                         android:id="@+id/btnContinue"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:textColor="@color/colorw"
-                        android:textSize="16sp"
-                        android:text="@string/continue_"
-                        android:fontFamily="@font/tajawal_medium"
                         android:background="@drawable/strok"
-                        android:backgroundTint="@color/colorPrimary"/>
+                        android:backgroundTint="@color/colorPrimary"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/continue_"
+                        android:textColor="@color/colorw"
+                        android:textSize="16sp" />
 
 
                     <Button
@@ -312,12 +449,11 @@
                         android:layout_height="40dp"
                         android:layout_marginTop="21.5dp"
                         android:layout_marginBottom="20dp"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="19sp"
-                        android:text="@string/back"
-                        android:fontFamily="@font/tajawal_medium"
                         android:background="@drawable/strok_primarydark"
-                        />
+                        android:fontFamily="@font/tajawal_medium"
+                        android:text="@string/back"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="19sp" />
 
 
                 </LinearLayout>

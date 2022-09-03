@@ -141,6 +141,7 @@
                                 android:textSize="20sp" />
 
                             <RelativeLayout
+                                android:id="@+id/relativeDiscount"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="20dp">
@@ -148,9 +149,9 @@
                                 <View
                                     android:layout_width="wrap_content"
                                     android:layout_height="2dp"
+                                    android:layout_centerInParent="true"
                                     android:layout_toStartOf="@+id/linearDiscount"
                                     android:layout_toEndOf="@+id/linearDiscount"
-                                    android:layout_centerInParent="true"
                                     android:background="@color/colorGray2" />
 
                                 <LinearLayout
@@ -187,8 +188,6 @@
 
 
                                 </LinearLayout>
-
-
 
 
                             </RelativeLayout>
@@ -585,18 +584,79 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@color/colorGray"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.application.tedallal_app.Utils.TextViewWithFontMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:fontFamily="@font/tajawal_medium"
+                        android:gravity="center"
+                        android:text="@string/extra_request"
+                        android:textColor="@color/colorb"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcyExtraRequest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/editExtraRequests"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/strok5"
+                    android:fontFamily="@font/tajawal_regular"
+                    android:gravity="start|center_vertical"
+                    android:inputType="text"
+                    android:hint="@string/write_your_own_extra_request"
+                    android:maxLines="1"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorb"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="20dp"
                     android:orientation="horizontal"
                     android:weightSum="1">
 
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight=".2"
                         android:background="@drawable/strok2"
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
@@ -611,7 +671,7 @@
                             android:singleLine="true"
                             android:text="@string/quntity1"
                             android:textColor="@color/colorGray4"
-                            android:textSize="10sp" />
+                            android:textSize="14sp" />
 
                         <!--                        <EditText-->
                         <!--                            android:id="@+id/editQuntity"-->
@@ -627,45 +687,120 @@
                         <!--                            android:text="1"-->
                         <!--                            android:textSize="16sp" />-->
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/strok3"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
 
 
-                            <Spinner
-                                android:id="@+id/spinnerQuntity"
-                                android:layout_width="match_parent"
+                            <LinearLayout
+                                android:id="@+id/txtIncrease"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="center"
-                                android:layout_marginEnd="8dp"
-                                android:background="@android:color/transparent"
+                                android:layout_weight=".2"
+                                android:background="@color/colorPrimary"
+                                android:orientation="horizontal">
+
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/colorPrimary"
+                                    android:gravity="center"
+                                    android:scaleX=".5"
+                                    android:scaleY=".5"
+                                    android:src="@drawable/plus" />
+
+                            </LinearLayout>
+
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="2.5dp"
+                                android:layout_marginBottom="2.5dp"
+                                android:background="@color/colorEditBorder" />
+
+
+                            <EditText
+
+                                android:id="@+id/txtQuntity"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="1dp"
+                                android:layout_marginBottom="1dp"
+                                android:layout_weight=".6"
+                                android:background="@color/colorw"
+                                android:backgroundTint="@color/colorGray5"
+                                android:clickable="false"
+                                android:editable="false"
+                                android:fontFamily="@font/tajawal_regular"
                                 android:gravity="center"
-                                android:spinnerMode="dropdown" />
+                                android:inputType="textEmailAddress"
+                                android:maxLength="2"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="1"
+                                android:textColor="@color/colorb"
+                                android:textSize="@dimen/_13sdp" />
 
-                            <ImageView
-                                android:layout_width="12dp"
-                                android:layout_height="12dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="center"
-                                android:layout_marginEnd="4dp"
-                                android:src="@drawable/arrow_down_svg" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="2.5dp"
+                                android:layout_marginBottom="2.5dp"
+                                android:background="@color/colorEditBorder" />
+
+                            <LinearLayout
+                                android:id="@+id/txtDecrease"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".2"
+                                android:background="@color/colorPrimary"
+                                android:orientation="horizontal">
 
 
-                        </RelativeLayout>
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/colorPrimary"
+                                    android:gravity="center"
+                                    android:scaleX=".5"
+                                    android:scaleY=".5"
+                                    android:src="@drawable/minus" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
 
 
                     </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="6dp"
-                        android:layout_weight=".8"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <Button

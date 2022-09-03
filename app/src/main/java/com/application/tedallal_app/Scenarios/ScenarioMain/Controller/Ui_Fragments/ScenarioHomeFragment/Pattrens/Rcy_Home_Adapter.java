@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.application.tedallal_app.R;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Controller.Home_Fragment;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Controller.UI_Home_Fragment.ScenarioHomeDetails.Controller.Home_Details_Fragment;
+import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Controller.UI_Home_Fragment.ScenarioHomeDetails.Controller.Home_Details_Fragment2;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Model.ModelAllCategoryResponse;
 import com.application.tedallal_app.Utils.TinyDB;
 import com.application.tedallal_app.local_data.saved_data;
@@ -122,7 +123,7 @@ public class Rcy_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 //                tinyDB.putListString("listImage", images);
 
                 FragmentTransaction fr = ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new Home_Details_Fragment());
+                fr.replace(R.id.fragment_container, new Home_Details_Fragment2());
                 fr.addToBackStack(null);
                 fr.commit();
 

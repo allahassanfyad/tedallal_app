@@ -9,7 +9,7 @@
     <item
         android:id="@+id/profile"
         android:title="@string/my_account"
-        android:icon="@drawable/user_svg"/>
+        android:icon="@drawable/ic_lock_svg"/>
 
 
     <item

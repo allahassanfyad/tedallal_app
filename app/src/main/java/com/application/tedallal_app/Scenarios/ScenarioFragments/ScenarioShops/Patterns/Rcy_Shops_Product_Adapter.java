@@ -75,9 +75,7 @@ public class Rcy_Shops_Product_Adapter extends RecyclerView.Adapter<RecyclerView
 
         } else if (saved_data.get_lang_num(context).equals("en")) {
 
-
             itemHome.txttitle.setText(songs.getTitleEn());
-
 
         }
 

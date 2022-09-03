@@ -106,6 +106,7 @@ public class Shops_Fragment extends Fragment implements NetworkInterface, IFOnBa
             shop.setTypeShop(model_shops[i].getTypeShop());
             shop.setClosingTime(model_shops[i].getClosingTime());
             shop.setOpeningTime(model_shops[i].getOpeningTime());
+            shop.setCover_suppliers(model_shops[i].getCover_suppliers());
 
             shops_list.add(shop);
 

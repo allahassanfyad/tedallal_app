@@ -23,5 +23,7 @@
     <color name="colorChatLeft">#ebdfc3</color>
     <color name="colorChatRight">#f0d79c</color>
     <color name="colorSplash">#fff50e</color>
+    <color name="colorTransparent">#0014171A</color>
+    <color name="colorTransparentBlack">#00000000</color>
 
 </resources>

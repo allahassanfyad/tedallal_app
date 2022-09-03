@@ -44,7 +44,7 @@ public class Add_Address_Fragment extends Fragment implements IFOnBackPressed, N
 
     private View view;
 
-    EditText editname, editcountryCode, editcity, editnabour, editstreat, editpostnumber, editphone;
+    EditText editname, editcountryCode, editcity, editArea, editstreat, editphone, editblock, editbuilding, editapartment, editfloor, edittypeofDelivery, editavenve;
     Button btnContinue, btnBack;
     ArrayAdapter<String> countryAdapter;
     Spinner spinnercountry;
@@ -67,11 +67,16 @@ public class Add_Address_Fragment extends Fragment implements IFOnBackPressed, N
         tinyDB = new TinyDB(getContext());
         btnBack = view.findViewById(R.id.btnBack);
         editcity = view.findViewById(R.id.editCity);
-        spinnercountry = (Spinner) view.findViewById(R.id.spinnerCountry);
-        editnabour = view.findViewById(R.id.editNabour);
+        spinnercountry = view.findViewById(R.id.spinnerCountry);
+        editArea = view.findViewById(R.id.editArea);
         editname = view.findViewById(R.id.editName);
         editphone = view.findViewById(R.id.editPhone);
-        editpostnumber = view.findViewById(R.id.editPostNumber);
+        editblock = view.findViewById(R.id.editBlock);
+        editbuilding = view.findViewById(R.id.editBuildingNumber);
+        editapartment = view.findViewById(R.id.editApartmentNumber);
+        editfloor = view.findViewById(R.id.editFloorNumber);
+        edittypeofDelivery = view.findViewById(R.id.editTypeOfDeliveryPlace);
+        editavenve = view.findViewById(R.id.editAvenve);
         editstreat = view.findViewById(R.id.editStreat);
         editcountryCode = view.findViewById(R.id.editCountryCode);
 
@@ -109,24 +114,9 @@ public class Add_Address_Fragment extends Fragment implements IFOnBackPressed, N
                             .playOn(view.findViewById(R.id.editPhone));
 
 
-                } else if (country.equals("") || country.equals("     ")) {
+                } else if (editArea.getText().toString().equals("")) {
 
-                    Toasty.error(Objects.requireNonNull(getContext()), getString(R.string.please_enter_your_country), Toast.LENGTH_LONG).show();
-
-
-                } else if (editcity.getText().toString().equals("")) {
-
-
-                    editcity.setError(getString(R.string.please_enter_city));
-                    YoYo.with(Techniques.Shake)
-                            .duration(700)
-                            .repeat(1)
-                            .playOn(view.findViewById(R.id.editCity));
-
-
-                } else if (editnabour.getText().toString().equals("")) {
-
-                    editnabour.setError(getString(R.string.please_enter_ىeighborhood_name));
+                    editArea.setError(getString(R.string.please_enter_ىeighborhood_name));
                     YoYo.with(Techniques.Shake)
                             .duration(700)
                             .repeat(1)
@@ -142,7 +132,25 @@ public class Add_Address_Fragment extends Fragment implements IFOnBackPressed, N
                             .playOn(view.findViewById(R.id.editStreat));
 
 
-                } else {
+                } else if (editblock.getText().toString().equals("")) {
+
+                    editblock.setError("Please enter the block number");
+                    YoYo.with(Techniques.Shake)
+                            .duration(700)
+                            .repeat(1)
+                            .playOn(view.findViewById(R.id.editBlock));
+
+
+                } else if (editbuilding.getText().toString().equals("")) {
+
+                    editbuilding.setError("Please enter the building number");
+                    YoYo.with(Techniques.Shake)
+                            .duration(700)
+                            .repeat(1)
+                            .playOn(view.findViewById(R.id.editBuildingNumber));
+
+
+                }  else {
 
                     if (Profile_Delivery_Fragment.address == 2) {
 
@@ -158,8 +166,8 @@ public class Add_Address_Fragment extends Fragment implements IFOnBackPressed, N
 
 
                         String address_id = tinyDB.getString("AddressId");
-                        String address = editstreat.getText().toString() + " " + country + " " + editcity.getText().toString() + " " + editnabour.getText().toString() + " " + editcountryCode.getText().toString() + " " + editphone.getText().toString();
-                        new Apicalls(getContext(), Add_Address_Fragment.this).edit_Address(editname.getText().toString(), country, editcity.getText().toString(), editnabour.getText().toString(), editstreat.getText().toString(), editpostnumber.getText().toString(), phone, saved_data.get_user_id(Objects.requireNonNull(getContext())), address_id);
+                        String address = editstreat.getText().toString() + " " + country + " " + editcity.getText().toString() + " " + editArea.getText().toString() + " " + editcountryCode.getText().toString() + " " + editphone.getText().toString();
+                        new Apicalls(getContext(), Add_Address_Fragment.this).edit_Address(editname.getText().toString(), country, editcity.getText().toString(), editArea.getText().toString(), editstreat.getText().toString(), "", phone, saved_data.get_user_id(Objects.requireNonNull(getContext())), address_id, editblock.getText().toString(), editbuilding.getText().toString(), editapartment.getText().toString(), editfloor.getText().toString(), editavenve.getText().toString());
 
 
                     } else {
@@ -173,8 +181,8 @@ public class Add_Address_Fragment extends Fragment implements IFOnBackPressed, N
 //                        }
                         phone = editphone.getText().toString();
 
-                        String address = editstreat.getText().toString() + " " + country + " " + editcity.getText().toString() + " " + editnabour.getText().toString() + " " + editcountryCode.getText().toString() + " " + editphone.getText().toString();
-                        new Apicalls(getContext(), Add_Address_Fragment.this).add_Address(editname.getText().toString(), country, editcity.getText().toString(), editnabour.getText().toString(), editstreat.getText().toString(), editpostnumber.getText().toString(), phone, saved_data.get_user_id(Objects.requireNonNull(getContext())));
+                        String address = editstreat.getText().toString() + " " + country + " " + editcity.getText().toString() + " " + editArea.getText().toString() + " " + editcountryCode.getText().toString() + " " + editphone.getText().toString() + " " + editblock.getText().toString() + " " + editbuilding.getText().toString() + " " + editapartment.getText().toString() + " " + editfloor.getText().toString();
+                        new Apicalls(getContext(), Add_Address_Fragment.this).add_Address(editname.getText().toString(), country, editcity.getText().toString(), editArea.getText().toString(), editstreat.getText().toString(), "", phone, editblock.getText().toString(), editbuilding.getText().toString(), editapartment.getText().toString(), editfloor.getText().toString(), edittypeofDelivery.getText().toString(), saved_data.get_user_id(Objects.requireNonNull(getContext())), editavenve.getText().toString(), address);
 
 
                     }
@@ -312,10 +320,9 @@ public class Add_Address_Fragment extends Fragment implements IFOnBackPressed, N
             if (Profile_Delivery_Fragment.address == 2) {
 
                 editstreat.setText(tinyDB.getString("AddressStreet"));
-                editpostnumber.setText(tinyDB.getString("AddressPosta"));
                 editphone.setText(tinyDB.getString("AddressPhone"));
                 editname.setText(tinyDB.getString("AddressName"));
-                editnabour.setText(tinyDB.getString("AddressArea"));
+                editArea.setText(tinyDB.getString("AddressArea"));
                 editcity.setText(tinyDB.getString("AddressCity"));
                 String counntry = tinyDB.getString("AddressCountry");
                 spinnercountry.setSelection(countryAdapter.getPosition(counntry));

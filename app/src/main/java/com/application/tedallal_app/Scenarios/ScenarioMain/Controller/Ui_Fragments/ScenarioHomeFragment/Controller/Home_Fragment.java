@@ -37,6 +37,7 @@ import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioAddCart.
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioOffers.Controller.Offers_Fragment;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioOffers.Patterns.Rcy_Offers_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Controller.Shops_Fragment;
+import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Models.Model_Shops;
 import com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Patterns.Rcy_Shops_Product_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.MainActivity;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Controller.UI_Home_Fragment.ScenarioHomeDetails.Model.ModelAllProductByCategoreyResponse;
@@ -45,6 +46,7 @@ import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragmen
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Pattrens.Rcy_Best_Selling_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Pattrens.Rcy_Home_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Pattrens.Rcy_Recently_Added_Adapter;
+import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Pattrens.Rcy_Shops_Home_Adapter;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Controller.Ui_Fragments.ScenarioHomeFragment.Pattrens.Rcy_Slider_Home_adapter;
 import com.application.tedallal_app.Scenarios.ScenarioMain.Pattrens.IFOnBackPressed;
 import com.application.tedallal_app.Utils.TinyDB;
@@ -60,12 +62,12 @@ import java.util.TimerTask;
 public class Home_Fragment extends Fragment implements IFOnBackPressed, NetworkInterface {
 
     private View view;
-    RecyclerView rcyHome, rcybestselling, rcyrecentadded;
+    RecyclerView rcyHome, rcyShopsHome;
     ModelAllCategoryResponse[] allCategoryResponses;
+    Model_Shops[] model_shops;
     List<ModelAllCategoryResponse> homeList = new ArrayList<>();
-    ModelAllProductByCategoreyResponse[] homeDetailsResponses;
-    List<ModelAllProductByCategoreyResponse> bestSellingList = new ArrayList<>();
-    List<ModelAllProductByCategoreyResponse> recentlyAddedList = new ArrayList<>();
+    List<Model_Shops> homeShopsList = new ArrayList<>();
+
     ViewPager2 viewPager;
     List<mode_introduction> models = new ArrayList<>();
     Rcy_Slider_Home_adapter adapter;
@@ -93,8 +95,8 @@ public class Home_Fragment extends Fragment implements IFOnBackPressed, NetworkI
         tinyDB = new TinyDB(getContext());
 
         rcyHome = view.findViewById(R.id.rcyHome);
-        rcybestselling = view.findViewById(R.id.rcyBestSelling);
-        rcyrecentadded = view.findViewById(R.id.rcyRecentlyAdded);
+//        rcybestselling = view.findViewById(R.id.rcyBestSelling);
+        rcyShopsHome = view.findViewById(R.id.rcyShopsHome);
         btnoffers = view.findViewById(R.id.btnOffers);
         btnshopd = view.findViewById(R.id.btnShops);
 
@@ -301,121 +303,50 @@ public class Home_Fragment extends Fragment implements IFOnBackPressed, NetworkI
             }
 
             x = 4;
-            if (saved_data.get_user_id(Objects.requireNonNull(getContext())).equals("0") || saved_data.get_user_id(Objects.requireNonNull(getContext())) == null) {
-
-                new Apicalls(getContext(), Home_Fragment.this).get_Best_Selling("0");
-
-            } else {
-
-                String user_id = saved_data.get_user_id(getContext());
-                new Apicalls(getContext(), Home_Fragment.this).get_Best_Selling(user_id);
-
-            }
+            new Apicalls(getContext(), Home_Fragment.this).get_Shops_Home();
 
 
         } else if (x == 4) {
-            bestSellingList.clear();
-
-            Gson gson = new Gson();
-
-            homeDetailsResponses = gson.fromJson(model.getResponse(), ModelAllProductByCategoreyResponse[].class);
-
-            for (int i = 0; i < homeDetailsResponses.length; i++) {
-
-                ModelAllProductByCategoreyResponse homeDetailsResponse = new ModelAllProductByCategoreyResponse();
-
-                homeDetailsResponse.setCategory(homeDetailsResponses[i].getCategory());
-                homeDetailsResponse.setDatee(homeDetailsResponses[i].getDatee());
-                homeDetailsResponse.setDes(homeDetailsResponses[i].getDes());
-                homeDetailsResponse.setDesEn(homeDetailsResponses[i].getDesEn());
-                homeDetailsResponse.setId(homeDetailsResponses[i].getId());
-                homeDetailsResponse.setImg1(homeDetailsResponses[i].getImg1());
-                homeDetailsResponse.setImg2(homeDetailsResponses[i].getImg2());
-                homeDetailsResponse.setImg3(homeDetailsResponses[i].getImg3());
-                homeDetailsResponse.setPrice(homeDetailsResponses[i].getPrice());
-                homeDetailsResponse.setIsfav(homeDetailsResponses[i].getIsfav());
-                homeDetailsResponse.setPriceDiscount(homeDetailsResponses[i].getPriceDiscount());
-                homeDetailsResponse.setRate(homeDetailsResponses[i].getRate());
-                homeDetailsResponse.setSlider(homeDetailsResponses[i].getSlider());
-                homeDetailsResponse.setTitle(homeDetailsResponses[i].getTitle());
-                homeDetailsResponse.setTitleEn(homeDetailsResponses[i].getTitleEn());
-                homeDetailsResponse.setNumberRate(homeDetailsResponses[i].getNumberRate());
-                homeDetailsResponse.setNumberStar(homeDetailsResponses[i].getNumberStar());
-
-                if (homeDetailsResponse.getIsfav().equals("yes")) {
-
-                    homeDetailsResponse.setFavouret(true);
-
-                }
-
-                bestSellingList.add(homeDetailsResponse);
-
-            }
-
-            rcybestselling.setHasFixedSize(true);
-            rcybestselling.setLayoutManager(new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false));
-            rcybestselling.setAdapter(new Rcy_Best_Selling_Adapter(bestSellingList, getActivity()));
-
-            x = 5;
-            if (saved_data.get_user_id(Objects.requireNonNull(getContext())).equals("0") || saved_data.get_user_id(Objects.requireNonNull(getContext())) == null) {
-
-                new Apicalls(getContext(), Home_Fragment.this).get_Recently_Added("0");
-
-            } else {
-
-                String user_id = saved_data.get_user_id(getContext());
-                new Apicalls(getContext(), Home_Fragment.this).get_Recently_Added(user_id);
-
-            }
-
-
-        } else if (x == 5) {
+            homeShopsList.clear();
             MainActivity.loading.setVisibility(View.GONE);
-            recentlyAddedList.clear();
             Gson gson = new Gson();
+            model_shops = gson.fromJson(model.getResponse(), Model_Shops[].class);
 
-            homeDetailsResponses = gson.fromJson(model.getResponse(), ModelAllProductByCategoreyResponse[].class);
+            for (int i = 0; i < model_shops.length; i++) {
 
-            for (int i = 0; i < homeDetailsResponses.length; i++) {
+                Model_Shops shop = new Model_Shops();
+                shop.setId(model_shops[i].getId());
+                shop.setIdSuppliers(model_shops[i].getIdSuppliers());
+                shop.setIdAdmin(model_shops[i].getIdAdmin());
+                shop.setNameSuppliers(model_shops[i].getNameSuppliers());
+                shop.setAddress(model_shops[i].getAddress());
+                shop.setNameCompany(model_shops[i].getNameCompany());
+                shop.setName_company_ar(model_shops[i].getName_company_ar());
+                shop.setPhone(model_shops[i].getPhone());
+                shop.setEmail(model_shops[i].getEmail());
+                shop.setPassword(model_shops[i].getPassword());
+                shop.setImg(model_shops[i].getImg());
+                shop.setDatee(model_shops[i].getDatee());
+                shop.setPercent(model_shops[i].getPercent());
+                shop.setTypeSuppliers(model_shops[i].getTypeSuppliers());
+                shop.setNameEmploy(model_shops[i].getNameEmploy());
+                shop.setDateeStart(model_shops[i].getDateeStart());
+                shop.setDateeEnd(model_shops[i].getDateeEnd());
+                shop.setStatusSuppliers(model_shops[i].getStatusSuppliers());
+                shop.setTypeShop(model_shops[i].getTypeShop());
+                shop.setClosingTime(model_shops[i].getClosingTime());
+                shop.setOpeningTime(model_shops[i].getOpeningTime());
+                shop.setCover_suppliers(model_shops[i].getCover_suppliers());
 
-                ModelAllProductByCategoreyResponse homeDetailsResponse = new ModelAllProductByCategoreyResponse();
-
-                homeDetailsResponse.setCategory(homeDetailsResponses[i].getCategory());
-                homeDetailsResponse.setDatee(homeDetailsResponses[i].getDatee());
-                homeDetailsResponse.setDes(homeDetailsResponses[i].getDes());
-                homeDetailsResponse.setDesEn(homeDetailsResponses[i].getDesEn());
-                homeDetailsResponse.setId(homeDetailsResponses[i].getId());
-                homeDetailsResponse.setImg1(homeDetailsResponses[i].getImg1());
-                homeDetailsResponse.setImg2(homeDetailsResponses[i].getImg2());
-                homeDetailsResponse.setImg3(homeDetailsResponses[i].getImg3());
-                homeDetailsResponse.setPrice(homeDetailsResponses[i].getPrice());
-                homeDetailsResponse.setIsfav(homeDetailsResponses[i].getIsfav());
-                homeDetailsResponse.setPriceDiscount(homeDetailsResponses[i].getPriceDiscount());
-                homeDetailsResponse.setRate(homeDetailsResponses[i].getRate());
-                homeDetailsResponse.setSlider(homeDetailsResponses[i].getSlider());
-                homeDetailsResponse.setTitle(homeDetailsResponses[i].getTitle());
-                homeDetailsResponse.setTitleEn(homeDetailsResponses[i].getTitleEn());
-                homeDetailsResponse.setNumberRate(homeDetailsResponses[i].getNumberRate());
-                homeDetailsResponse.setNumberStar(homeDetailsResponses[i].getNumberStar());
-
-                if (homeDetailsResponse.getIsfav().equals("yes")) {
-
-                    homeDetailsResponse.setFavouret(true);
-
-                }
-
-                recentlyAddedList.add(homeDetailsResponse);
+                homeShopsList.add(shop);
 
             }
 
-            rcyrecentadded.setHasFixedSize(true);
-            rcyrecentadded.setLayoutManager(new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false));
-            rcyrecentadded.setAdapter(new Rcy_Recently_Added_Adapter(recentlyAddedList, getActivity()));
-
+            rcyShopsHome.setHasFixedSize(true);
+            rcyShopsHome.setLayoutManager(new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false));
+            rcyShopsHome.setAdapter(new Rcy_Shops_Home_Adapter(homeShopsList, getActivity()));
 
         }
-
-
     }
 
     @Override

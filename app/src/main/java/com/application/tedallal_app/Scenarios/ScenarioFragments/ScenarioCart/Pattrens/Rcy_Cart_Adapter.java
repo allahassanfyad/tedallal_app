@@ -211,7 +211,7 @@ public class Rcy_Cart_Adapter extends RecyclerView.Adapter<Rcy_Cart_Adapter.Item
 
                     }else {
 
-                        pricedecrease = Integer.parseInt(songs.getTxtprice());
+                        pricedecrease = Double.parseDouble(songs.getTxtprice());
 
                     }
                     double number = Double.parseDouble(songs.getTxtnumberchoose());

@@ -10,8 +10,8 @@ android {
         applicationId "com.application.tedallal_app"
         minSdk 21
         targetSdk 32
-        versionCode 7
-        versionName "1.6"
+        versionCode 9
+        versionName "1.8"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

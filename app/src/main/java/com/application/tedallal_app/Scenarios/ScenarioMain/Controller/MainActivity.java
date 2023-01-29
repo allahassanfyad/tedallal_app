@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
     public static LinearLayout loading;
     public static int login = 0;
     Realm realm;
-    public static TextView txtcartcounter;
+//    public static TextView txtcartcounter;
     ArrayList<Rcy_Cart_Model> cartModels = new ArrayList<>();
-    RelativeLayout linearCartImage;
+//    RelativeLayout linearCartImage;
     public static Button txtlogout;
     LinearLayout linearWhatsApp, linearInstgram, linearSnap;
 
@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
         navigation = findViewById(R.id.navigation);
         fragmentManager = getSupportFragmentManager();
         drawerLayout = findViewById(R.id.drawer);
-        txtcartcounter = findViewById(R.id.txtCartCount);
-        linearCartImage = findViewById(R.id.linearCartImage);
+//        txtcartcounter = findViewById(R.id.txtCartCount);
+//        linearCartImage = findViewById(R.id.linearCartImage);
         txtlogout = findViewById(R.id.btnLogout);
         linearWhatsApp = findViewById(R.id.linearWhatsApp);
         linearInstgram = findViewById(R.id.linearInstegram);
@@ -181,30 +181,30 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        if (cartModels.size() == 0) {
-
-            txtcartcounter.setVisibility(View.GONE);
-
-
-        } else {
-
-//            txtcartcounter.setVisibility(View.VISIBLE);
-//            txtcartcounter.setText("" + cartModels.size());
+//        if (cartModels.size() == 0) {
 //
-
-            setcartcount();
-        }
-
-
-        linearCartImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Cart_Fragment cart_fragment = new Cart_Fragment();
-                loadFragment(cart_fragment);
-
-            }
-        });
+//            txtcartcounter.setVisibility(View.GONE);
+//
+//
+//        } else {
+//
+////            txtcartcounter.setVisibility(View.VISIBLE);
+////            txtcartcounter.setText("" + cartModels.size());
+////
+//
+//            setcartcount();
+//        }
+//
+//
+//        linearCartImage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Cart_Fragment cart_fragment = new Cart_Fragment();
+//                loadFragment(cart_fragment);
+//
+//            }
+//        });
 
 
         Home_Fragment home_fragment = new Home_Fragment();
@@ -700,12 +700,13 @@ public class MainActivity extends AppCompatActivity {
         int productNumber = 0;
         if (cartModels.size() == 0) {
 
-            txtcartcounter.setVisibility(View.GONE);
+//            txtcartcounter.setVisibility(View.GONE);
+            Log.w("ajja","akhnk");
 
 
         } else {
 
-            txtcartcounter.setVisibility(View.VISIBLE);
+//            txtcartcounter.setVisibility(View.VISIBLE);
             for (int i = 0; i < cartModels.size(); i++) {
 
                 int number = Integer.parseInt(cartModels.get(i).getTxtnumberchoose());
@@ -713,7 +714,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
             Log.e("number", String.valueOf(productNumber));
-            txtcartcounter.setText("" + productNumber);
+//            txtcartcounter.setText("" + productNumber);
 
         }
 

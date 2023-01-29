@@ -29,6 +29,7 @@ public class ModelSubCategoryShopsResponse {
 	@SerializedName("name_category")
 	private String name_category;
 
+
 	public int getId() {
 		return id;
 	}

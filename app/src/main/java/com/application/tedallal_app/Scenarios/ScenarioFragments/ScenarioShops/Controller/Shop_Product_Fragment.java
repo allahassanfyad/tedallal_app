@@ -1,12 +1,16 @@
 package com.application.tedallal_app.Scenarios.ScenarioFragments.ScenarioShops.Controller;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -60,6 +64,8 @@ public class Shop_Product_Fragment extends Fragment implements NetworkInterface,
     ImageView imgLogo, imgCover;
     RelativeLayout relativeStatus;
     RecyclerView rcyShopsProduct, rcySubCategory;
+    LinearLayout linearWhatsApp, linearInstgram, linearSnap;
+
     List<ModelSubCategoryShopsResponse> subCategoryList = new ArrayList<>();
     ModelSubCategoryShopsResponse[] modelSubCategoryResponses;
     ModelAllProductByCategoreyResponse[] homeDetailsResponses;
@@ -81,6 +87,10 @@ public class Shop_Product_Fragment extends Fragment implements NetworkInterface,
         imgLogo = view.findViewById(R.id.imgLogo);
         relativeStatus = view.findViewById(R.id.relativeStatus);
         imgCover = view.findViewById(R.id.imgCover);
+        linearWhatsApp = view.findViewById(R.id.linearWhatsApp);
+        linearInstgram = view.findViewById(R.id.linearInstegram);
+//        linearTwitter = findViewById(R.id.linearTwitter);
+        linearSnap = view.findViewById(R.id.linearSnapChat);
 
         String status = tinyDB.getString("Type_Shop");
         String title = tinyDB.getString("Company_Name");
@@ -131,6 +141,83 @@ public class Shop_Product_Fragment extends Fragment implements NetworkInterface,
             }
 
         }
+
+
+        String whatsApp = tinyDB.getString("whatsapp");
+        String intsgram = tinyDB.getString("instagram");
+        String snapchat = tinyDB.getString("snapchat");
+
+        linearWhatsApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phone = "+96565173953";
+
+
+                String url = "https://api.whatsapp.com/send?phone=" + whatsApp;
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+
+
+            }
+        });
+
+
+//        linearTwitter.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                try {
+//                    Intent intent = new Intent(Intent.ACTION_VIEW,
+//                            Uri.parse("twitter://alshal_abaya"));
+//                    startActivity(intent);
+//                } catch (Exception e) {
+//                    startActivity(new Intent(Intent.ACTION_VIEW,
+//                            Uri.parse("https://twitter.com/alshal_abaya")));
+//                }
+//            }
+//        });
+
+
+        linearInstgram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Uri uri = Uri.parse("http://instagram.com/_u/" + intsgram);
+                Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
+
+                likeIng.setPackage("com.instagram.android");
+
+                try {
+                    startActivity(likeIng);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://instagram.com/" + intsgram)));
+                }
+
+
+            }
+        });
+
+        linearSnap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                "https://snapchat.com/add/username"
+
+                String snapchatId = "tadallal.app";
+
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://snapchat.com/add/" + snapchat));
+                    intent.setPackage("com.snapchat.android");
+                    startActivity(intent);
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://snapchat.com/add/" + snapchat)));
+                }
+
+            }
+        });
 
 
         x = 1;
@@ -227,6 +314,7 @@ public class Shop_Product_Fragment extends Fragment implements NetworkInterface,
                 subCategoryResponse.setImg_category(modelSubCategoryResponses[i].getImg_category());
                 subCategoryResponse.setName_category(modelSubCategoryResponses[i].getName_category());
 
+
                 subCategoryList.add(subCategoryResponse);
             }
 
@@ -257,7 +345,7 @@ public class Shop_Product_Fragment extends Fragment implements NetworkInterface,
             fr.addToBackStack(null);
             fr.commit();
 
-        }else {
+        } else {
 
             FragmentTransaction fr = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
             fr.replace(R.id.fragment_container, new Home_Details_Fragment2());
@@ -268,4 +356,6 @@ public class Shop_Product_Fragment extends Fragment implements NetworkInterface,
 
         return true;
     }
+
+
 }

@@ -40,7 +40,6 @@
                         android:textSize="18sp" />
 
 
-
                     <com.application.tedallal_app.Utils.TextViewWithFontbold
                         android:id="@+id/txtProfileName"
                         android:layout_width="wrap_content"
@@ -99,6 +98,7 @@
                                 android:fontFamily="@font/tajawal_medium"
                                 android:includeFontPadding="false"
                                 android:padding="5dp"
+                                android:visibility="gone"
                                 app:selectedTextColor="@color/colorPrimaryDark"
                                 app:text="@string/delivery_address"
                                 app:textColor="@color/colorDarkGray"
@@ -112,6 +112,7 @@
                                 android:fontFamily="@font/tajawal_medium"
                                 android:includeFontPadding="false"
                                 android:padding="5dp"
+                                android:visibility="gone"
                                 app:selectedTextColor="@color/colorPrimaryDark"
                                 app:text="@string/orders"
                                 app:textColor="@color/colorDarkGray"
@@ -150,9 +151,6 @@
 
 
                     </LinearLayout>
-
-
-
 
 
                 </LinearLayout>

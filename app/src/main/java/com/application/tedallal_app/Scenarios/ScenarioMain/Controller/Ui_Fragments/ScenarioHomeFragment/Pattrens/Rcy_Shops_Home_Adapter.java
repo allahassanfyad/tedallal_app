@@ -161,6 +161,9 @@ public class Rcy_Shops_Home_Adapter extends RecyclerView.Adapter<RecyclerView.Vi
                 tinyDB.putString("Opening_Time", String.valueOf(songs.getOpeningTime()));
                 tinyDB.putString("Shop_Logo", String.valueOf(songs.getImg()));
                 tinyDB.putString("cover_suppliers", String.valueOf(songs.getCover_suppliers()));
+                tinyDB.putString("whatsapp", String.valueOf(songs.getWhatsapp()));
+                tinyDB.putString("instagram", String.valueOf(songs.getInstagram()));
+                tinyDB.putString("snapchat", String.valueOf(songs.getSnapchat()));
 
                 shops_Home = 1;
 

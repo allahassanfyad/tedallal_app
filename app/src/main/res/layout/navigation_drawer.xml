@@ -108,6 +108,7 @@
                         android:id="@+id/linearOrders"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:visibility="gone"
                         android:orientation="vertical">
 
                         <com.application.tedallal_app.Utils.TextViewWithFontMedium
@@ -132,6 +133,7 @@
                         android:id="@+id/linearFavourite"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:visibility="gone"
                         android:orientation="vertical">
 
                         <com.application.tedallal_app.Utils.TextViewWithFontMedium
@@ -182,6 +184,7 @@
                         android:id="@+id/linearAboutUs"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:visibility="gone"
                         android:orientation="vertical">
 
                         <com.application.tedallal_app.Utils.TextViewWithFontMedium

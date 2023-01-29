@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSplash"
+    android:background="@color/colorw"
     android:gravity="center_vertical"
     tools:context=".Scenarios.ScenarioHome.Controller.Splash"
     android:orientation="vertical">
@@ -13,7 +13,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_tedallal"
+        android:src="@drawable/edit_splash_tadallal"
         android:scaleType="fitCenter" />
 
 

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/bottom_navigation_background.xml" value="0.104" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/bottom_navigation_colors.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/call_help_svg.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/circle_background_gray_small.xml" value="0.171" />
@@ -12,17 +13,21 @@
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/faq_help_svg.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/gradiant_color_black_hard.xml" value="0.1265" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/ic_lock_svg.xml" value="0.1265" />
+        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/instgram_side_svg.xml" value="0.104" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/instgram_svg.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/logo_svg.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/mail_help_svg.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/messages_help_svg.xml" value="0.171" />
+        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/notification_side_svg.xml" value="0.104" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/offers_svg.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/open_svg.xml" value="0.171" />
+        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/search_svg.xml" value="0.104" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/selector_line.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/shop_svg.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/snapchat_svg.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/strok2.xml" value="0.1265" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/whatsapp_help_svg.xml" value="0.171" />
+        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/drawable/whatsapp_side_svg.xml" value="0.104" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/aboutus_fragment.xml" value="0.22" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/activity_alshal_main.xml" value="0.14583333333333334" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/activity_chat.xml" value="0.20416666666666666" />
@@ -55,12 +60,12 @@
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/faq_webview_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/favourite_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/help_fragment.xml" value="0.20416666666666666" />
-        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/home_details_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/home_details_fragment.xml" value="0.21" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/home_details_item.xml" value="0.2" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/home_details_item1.xml" value="0.14" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/home_fragment.xml" value="0.22" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/home_fragment_item.xml" value="0.20416666666666666" />
-        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/navigation_drawer.xml" value="0.20416666666666666" />
+        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/navigation_drawer.xml" value="0.22" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/offers_fragment.xml" value="0.1836734693877551" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/order_details_fragment.xml" value="0.15580286168521462" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/order_details_product_item.xml" value="0.25" />
@@ -80,7 +85,7 @@
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/search_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/shop_fragment.xml" value="0.12708333333333333" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/shop_home_item.xml" value="0.5830985915492958" />
-        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/shop_product_fragment.xml" value="0.2" />
+        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/shop_product_fragment.xml" value="0.12" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/shops.xml" value="0.12708333333333333" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/shops_fragment.xml" value="0.15" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/shops_item.xml" value="0.33" />
@@ -91,9 +96,9 @@
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/sub_category_item.xml" value="0.33" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/terms_and_condition_fragment.xml" value="0.16" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/terms_popup.xml" value="0.20416666666666666" />
-        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/toolbar.xml" value="0.20416666666666666" />
+        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/toolbar.xml" value="0.22" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/toolbar_alshal.xml" value="0.20416666666666666" />
-        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/welcome_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/My projects/Tedallal_app/app/src/main/res/layout/welcome_dialog.xml" value="0.25" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/menu/main_menu_bottom.xml" value="0.20416666666666666" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.171" />
         <entry key="..\:/My projects/Tedallal_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />

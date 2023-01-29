@@ -189,7 +189,9 @@ public class Rcy_Sub_Category_Adapter extends RecyclerView.Adapter<RecyclerView.
                 shop.setTypeShop(model_shops[i].getTypeShop());
                 shop.setClosingTime(model_shops[i].getClosingTime());
                 shop.setOpeningTime(model_shops[i].getOpeningTime());
-
+                shop.setWhatsapp(model_shops[i].getWhatsapp());
+                shop.setInstagram(model_shops[i].getInstagram());
+                shop.setSnapchat(model_shops[i].getSnapchat());
                 shops_list.add(shop);
 
             }

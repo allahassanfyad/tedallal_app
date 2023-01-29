@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">tadallal</string>
+    <string name="app_name">مشاريع البيت</string>
     <string name="login">تسجيل الدخول</string>
     <string name="email_address">البريد الالكتروني</string>
     <string name="password">كلمة المرور</string>

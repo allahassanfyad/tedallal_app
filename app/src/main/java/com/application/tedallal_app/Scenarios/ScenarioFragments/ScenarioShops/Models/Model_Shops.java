@@ -50,7 +50,36 @@ public class Model_Shops {
     private String openingTime;
     @SerializedName("cover_suppliers")
     private String cover_suppliers;
+    @SerializedName("whatsapp")
+    private String whatsapp;
+    @SerializedName("instagram")
+    private String instagram;
+    @SerializedName("snapchat")
+    private String snapchat;
 
+    public String getWhatsapp() {
+        return whatsapp;
+    }
+
+    public void setWhatsapp(String whatsapp) {
+        this.whatsapp = whatsapp;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
+    }
+
+    public String getSnapchat() {
+        return snapchat;
+    }
+
+    public void setSnapchat(String snapchat) {
+        this.snapchat = snapchat;
+    }
 
     public String getCover_suppliers() {
         return cover_suppliers;

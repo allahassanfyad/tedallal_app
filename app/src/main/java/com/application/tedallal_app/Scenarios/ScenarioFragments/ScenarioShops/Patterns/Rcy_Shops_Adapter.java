@@ -165,6 +165,9 @@ public class Rcy_Shops_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 tinyDB.putString("Opening_Time", String.valueOf(songs.getOpeningTime()));
                 tinyDB.putString("Shop_Logo", String.valueOf(songs.getImg()));
                 tinyDB.putString("cover_suppliers", String.valueOf(songs.getCover_suppliers()));
+                tinyDB.putString("whatsapp", String.valueOf(songs.getWhatsapp()));
+                tinyDB.putString("instagram", String.valueOf(songs.getInstagram()));
+                tinyDB.putString("snapchat", String.valueOf(songs.getSnapchat()));
 
                 FragmentTransaction fr = ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new Shop_Product_Fragment());

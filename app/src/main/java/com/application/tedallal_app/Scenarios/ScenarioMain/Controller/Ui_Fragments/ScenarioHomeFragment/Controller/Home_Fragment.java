@@ -337,6 +337,9 @@ public class Home_Fragment extends Fragment implements IFOnBackPressed, NetworkI
                 shop.setClosingTime(model_shops[i].getClosingTime());
                 shop.setOpeningTime(model_shops[i].getOpeningTime());
                 shop.setCover_suppliers(model_shops[i].getCover_suppliers());
+                shop.setWhatsapp(model_shops[i].getWhatsapp());
+                shop.setInstagram(model_shops[i].getInstagram());
+                shop.setSnapchat(model_shops[i].getSnapchat());
 
                 homeShopsList.add(shop);
 

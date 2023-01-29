@@ -259,35 +259,35 @@ public class Rcy_Shops_Product_Adapter extends RecyclerView.Adapter<RecyclerView
 //                }
 //                selected_position = position;
 //                notifyDataSetChanged();
-                shops = 1;
-                if (saved_data.get_lang_num(Objects.requireNonNull(context)).equals("ar")) {
-
-
-                    tinyDB.putString("ProductId", String.valueOf(rcyHomelList.get(position).getId()));
-                    tinyDB.putString("ProductTitle", String.valueOf(rcyHomelList.get(position).getTitle()));
-                    tinyDB.putString("ProductPrice", String.valueOf(rcyHomelList.get(position).getPrice()));
-
-                } else if (saved_data.get_lang_num(context).equals("en")) {
-
-
-                    tinyDB.putString("ProductId", String.valueOf(rcyHomelList.get(position).getId()));
-                    tinyDB.putString("ProductTitle", String.valueOf(rcyHomelList.get(position).getTitleEn()));
-                    tinyDB.putString("ProductPrice", String.valueOf(rcyHomelList.get(position).getPrice()));
-
-                }
-
-
-                images.add(songs.getImg1());
-                images.add(songs.getImg2());
-                images.add(songs.getImg3());
-                images.add(songs.getSlider());
-
-                tinyDB.putListString("listImage", images);
-                tinyDB.putBoolean("isfav", songs.getFavouret());
-                FragmentTransaction fr = ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new Add_Cart_Fragment());
-                fr.addToBackStack(null);
-                fr.commit();
+//                shops = 1;
+//                if (saved_data.get_lang_num(Objects.requireNonNull(context)).equals("ar")) {
+//
+//
+//                    tinyDB.putString("ProductId", String.valueOf(rcyHomelList.get(position).getId()));
+//                    tinyDB.putString("ProductTitle", String.valueOf(rcyHomelList.get(position).getTitle()));
+//                    tinyDB.putString("ProductPrice", String.valueOf(rcyHomelList.get(position).getPrice()));
+//
+//                } else if (saved_data.get_lang_num(context).equals("en")) {
+//
+//
+//                    tinyDB.putString("ProductId", String.valueOf(rcyHomelList.get(position).getId()));
+//                    tinyDB.putString("ProductTitle", String.valueOf(rcyHomelList.get(position).getTitleEn()));
+//                    tinyDB.putString("ProductPrice", String.valueOf(rcyHomelList.get(position).getPrice()));
+//
+//                }
+//
+//
+//                images.add(songs.getImg1());
+//                images.add(songs.getImg2());
+//                images.add(songs.getImg3());
+//                images.add(songs.getSlider());
+//
+//                tinyDB.putListString("listImage", images);
+//                tinyDB.putBoolean("isfav", songs.getFavouret());
+//                FragmentTransaction fr = ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction();
+//                fr.replace(R.id.fragment_container, new Add_Cart_Fragment());
+//                fr.addToBackStack(null);
+//                fr.commit();
 
 
 //                tinyDB.putString("Brand_Id", String.valueOf(rcyHomelList.get(position).getId()));
